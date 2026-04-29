@@ -1,0 +1,34 @@
+---
+interface Props {
+  variant?: 'elevated' | 'bordered' | 'flat';
+  class?: string;
+}
+
+const { variant = 'elevated', class: className } = Astro.props;
+---
+
+<div class:list={['card', `card--${variant}`, className]}>
+  <slot />
+</div>
+
+<style>
+  .card {
+    background-color: var(--color-background-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-card-padding);
+    overflow: hidden;
+  }
+
+  .card--elevated {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  }
+
+  .card--bordered {
+    border: 1px solid var(--color-material-outline);
+  }
+
+  .card--flat {
+    background-color: var(--color-background-surface);
+    border-radius: 0;
+  }
+</style>
