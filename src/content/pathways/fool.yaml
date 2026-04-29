@@ -1,0 +1,51 @@
+name: Fool
+spoiler_free_name: Seer
+description: Specialize in divination, illusions, changing appearances, and controlling strong muscles and facial expressions. Fools perceptions and reality.
+sequences:
+  - number: 9
+    name: Seer
+    potion: A dark-blue gelatinous liquid. The smell of the potion is faint and seemingly ethereal. A cool and smooth feeling on their oral cavity upon drinking it.
+    ingredients:
+      - 10 milliliters Lavos Squid's Blood
+      - 50-gram Star Crystal
+    abilities:
+      - name: Divination
+        description: 1 cast action, 2 SP. Roll Occultism vs. difficulty (15–30+) to divine locations, events, people. Crit success reveals time/place/persons; Crit fail attracts unwanted attention. Requires clues for other people.
+      - name: Ritual Mastery
+        description: Grants access to ritual magic as long as Occultism is at least Trained.
+      - name: Spiritual Vision
+        description: See auras (health, emotion, spirituality). Costs 1 SP/round. +2 to spiritual intuition checks.
+  - number: 8
+    name: Clown
+    potion: A liquid displaying a mix of gold, yellow, and red, with distinctly separate colors at their boundaries. Bubbles churn and fizz within the liquid. It tastes extremely bitter and horrible.
+    ingredients:
+      - 1 crystal of a matured Hornacis Gray Mountain Goat Horn
+      - 1 Human-Faced Rose Complete Stalk
+    abilities:
+      - name: Danger Premonition
+        description: Triggers on ambush or when single damage exceeds ½ max HP. DC 15 Inspiration: learn danger form; +4 Physical Defense temporarily. [Seq 7] Danger appears as images, not thoughts. [Seq 6] Auto-success on Inspiration check. [Seq 5] Can foresee danger from targets 1 level above you.
+      - name: Paper Blades
+        description: 1 attack action. Throw paper/tarot cards as 1d4 + ½ STR damage die (physical). Chain up to 3 cards per action; each extra card is –2 to hit.
+      - name: Muscle Mastery
+        description: +2 to all muscle-related checks (fighting, throwing, shooting, performance, stealth). Silent movement by default. Fast Dodge (retain full Physical Defense vs. firearms).
+  - number: 7
+    name: Magician
+    potion: A unique liquid resembling a constant display of fireworks, with colors of red, orange, yellow, green, and others continuously scattering, disappearing, and reappearing. It feels ice-cold. When drinking it, at every moment, it would feel like countless bubbles were bursting.
+    ingredients:
+      - 1 True Root of a Mist Treant
+      - All the spinal fluid of a Dark Patterned Black Panther
+    abilities:
+      - name: Injury Transfer
+        description: 1 cast action, 2 SP. Touch a living creature — transfer wounds from vital areas to less critical body parts. Turns potentially lethal hits into minor ones.
+      - name: Flame Jump
+        description: Swift action. Teleport short distances through flames or SP expenditure. Leaves no trace. [Seq 3] Up to 5 km range.
+      - name: Create Illusions
+        description: Craft convincing visual hallucinations.
+      - name: Paper Doll Substitute
+        description: Place a paper doll as a substitute — absorbs an incoming attack or effect in your place.
+      - name: Manipulate Flames
+        description: Control existing fire, shape it, redirect it.
+      - name: Air Bomb
+        description: Compressed air attack.
+      - name: Bone Softening
+        description: Temporarily softens a target's bones on touch.

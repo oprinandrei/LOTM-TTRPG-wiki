@@ -1,0 +1,19 @@
+name: White Tower
+spoiler_free_name: Reader
+description: Knowledge, occult synthesis, secret arts, and universal simulation. The "know everything, do anything" path — at high cost.
+sequences:
+  - number: 9
+    name: Reader
+    potion: N/A
+    ingredients: []
+    abilities: []
+  - number: 8
+    name: Student of Ratiocination
+    potion: N/A
+    ingredients: []
+    abilities: []
+  - number: 7
+    name: Detective
+    potion: N/A
+    ingredients: []
+    abilities: []

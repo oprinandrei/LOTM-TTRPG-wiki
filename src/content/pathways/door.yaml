@@ -1,0 +1,19 @@
+name: Door
+spoiler_free_name: Apprentice
+description: Doors, spirit world travel, space, and the mysteries of passage. The "traveller" of paths.
+sequences:
+  - number: 9
+    name: Apprentice
+    potion: A black, viscous bubbling concoction resembling traditional herbal concoctions.
+    ingredients: []
+    abilities: []
+  - number: 8
+    name: Trickmaster
+    potion: A vibrant, colorful liquid resembling poisonous mushrooms.
+    ingredients: []
+    abilities: []
+  - number: 7
+    name: Astrologer
+    potion: Transparent and nearly solidified.
+    ingredients: []
+    abilities: []

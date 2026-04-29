@@ -1,0 +1,19 @@
+name: Chained
+spoiler_free_name: Prisoner
+description: Has different types of mutant abilities, but they're also cursed.
+sequences:
+  - number: 9
+    name: Prisoner
+    potion: A crimson liquid covered by a thin, pitch black membrane.
+    ingredients: []
+    abilities: []
+  - number: 8
+    name: Lunatic
+    potion: A grayish-white liquid that constantly bursts and flashes inside.
+    ingredients: []
+    abilities: []
+  - number: 7
+    name: Werewolf
+    potion: A dark green liquid with short hairs and a blood-red hue floating on it.
+    ingredients: []
+    abilities: []

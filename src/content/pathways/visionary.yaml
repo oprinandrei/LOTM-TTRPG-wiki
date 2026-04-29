@@ -1,0 +1,19 @@
+name: Visionary
+spoiler_free_name: Spectator
+description: Mind-reading, psychological insight, and psychic projection. A support/control path.
+sequences:
+  - number: 9
+    name: Spectator
+    potion: N/A
+    ingredients: []
+    abilities: []
+  - number: 8
+    name: Telepathist
+    potion: N/A
+    ingredients: []
+    abilities: []
+  - number: 7
+    name: Psychiatrist
+    potion: N/A
+    ingredients: []
+    abilities: []

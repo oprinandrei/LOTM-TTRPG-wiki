@@ -1,0 +1,25 @@
+name: Abyss
+spoiler_free_name: Criminal
+description: High strength, perception, can cast ritual and sacrificial spells, control and corrupt the desires of others, detect danger intuitively, increase in size, resist mental, poison, and curse attacks, and buff themselves for more strength and defense.
+sequences:
+  - number: 9
+    name: Criminal
+    potion: A bloody yet sweet, dark red liquid.
+    ingredients:
+      - 1 Head of a Savage Dog
+      - Crystal Feather of a Murderous Black Crow
+    abilities: []
+  - number: 8
+    name: ColdBlooded
+    potion: An ice-blue liquid with numerous black dots suspended in the air.
+    ingredients:
+      - The remains from a Rat King
+      - 1 heart of a Skinless Blood Cat
+    abilities: []
+  - number: 7
+    name: Serial Killer
+    potion: A black liquid with chunks of ice floating in it; the taste is pungent yet intoxicating.
+    ingredients:
+      - The Beak of a "Man-Eating Vulture"
+      - The Fangs of a "Shadow Serpent"
+    abilities: []

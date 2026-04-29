@@ -1,0 +1,19 @@
+name: Justiciar
+spoiler_free_name: Arbiter
+description: Law, justice, binding, and absolute order. What the Judge says becomes rule.
+sequences:
+  - number: 9
+    name: Arbiter
+    potion: A brownish-yellow liquid with black spots floating (sinking and rising) on it.
+    ingredients: []
+    abilities: []
+  - number: 8
+    name: Sheriff
+    potion: A liquid from the three colors iron black, dark red and silver white interweaving.
+    ingredients: []
+    abilities: []
+  - number: 7
+    name: Interrogator
+    potion: A light blue, translucent liquid that occasionally flashes with a silvery-white light.
+    ingredients: []
+    abilities: []

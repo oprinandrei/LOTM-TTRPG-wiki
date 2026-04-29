@@ -1,0 +1,19 @@
+name: Darkness
+spoiler_free_name: Sleepless
+description: Has powers related to the night and sleep. They gain strength during nighttime.
+sequences:
+  - number: 9
+    name: Sleepless
+    potion: A black liquid emitting a foul odor.
+    ingredients: []
+    abilities: []
+  - number: 9
+    name: Midnight Poet
+    potion: Lakewater-like liquid bathed in cold light, containing a faintly murmuring vortex within.
+    ingredients: []
+    abilities: []
+  - number: 7
+    name: Nightmare
+    potion: Illusory liquid filled with countless phantasms, as if materialized from dreams.
+    ingredients: []
+    abilities: []

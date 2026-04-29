@@ -1,0 +1,19 @@
+name: Moon
+spoiler_free_name: Apothecary
+description: Moonlight, transformation, dreams, and divine power.
+sequences:
+  - number: 9
+    name: Apothecary
+    potion: When exposed to light, it decomposes into a seven-colored alluring liquid, but with an extremely bitter taste.
+    ingredients: []
+    abilities: []
+  - number: 8
+    name: Beast Tamer
+    potion: Rose red, wine-like, with a slightly sour taste, attracting all mosquitoes nearby.
+    ingredients: []
+    abilities: []
+  - number: 7
+    name: Vampire
+    potion: A cup of bright red "blood" brimming with vitality, with a strong fishy taste.
+    ingredients: []
+    abilities: []

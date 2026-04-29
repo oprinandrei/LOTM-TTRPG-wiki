@@ -1,0 +1,19 @@
+name: Hermit
+spoiler_free_name: Mystery Pryer
+description: Hidden knowledge, extreme information control, and cosmic secrets.
+sequences:
+  - number: 9
+    name: A gradient of colors, with the liquid becoming increasingly dark and mysterious towards the center.
+    potion: N/A
+    ingredients: []
+    abilities: []
+  - number: 8
+    name: Melee Scholar
+    potion: A gray liquid that resembles a raging storm.
+    ingredients: []
+    abilities: []
+  - number: 7
+    name: Warlock
+    potion: Dark green pus with gray, flocculent particles floating in it. 
+    ingredients: []
+    abilities: []

@@ -1,0 +1,19 @@
+name: Mother
+spoiler_free_name: Planter
+description: Growth, endurance, healing, fertility, and the land itself.
+sequences:
+  - number: 9
+    name: Planter
+    potion: It resembles golden oatmeal porridge.
+    ingredients: []
+    abilities: []
+  - number: 8
+    name: Doctor
+    potion: A pale green liquid with a hint of blue, crystal clear, with an alluring aroma.
+    ingredients: []
+    abilities: []
+  - number: 7
+    name: Harvest Priest
+    potion: A golden liquid brimming with white foam, similar to beer.
+    ingredients: []
+    abilities: []

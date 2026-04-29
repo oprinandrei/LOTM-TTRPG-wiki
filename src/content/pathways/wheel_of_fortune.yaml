@@ -1,0 +1,19 @@
+name: Wheel of Fortune
+spoiler_free_name: Monster
+description: Fate itself — prediction, manipulation, and inevitability.
+sequences:
+  - number: 9
+    name: Monster
+    potion: A transparent liquid seemingly imbued with iridescent aurora.
+    ingredients: []
+    abilities: []
+  - number: 8
+    name: Robot
+    potion: A cold, gray liquid that seems almost solidified.
+    ingredients: []
+    abilities: []
+  - number: 7
+    name: Lucky One
+    potion: A mercury-colored liquid with suspended bubbles, as if eyes are opening within it.
+    ingredients: []
+    abilities: []

@@ -1,0 +1,25 @@
+name: Black Emperor
+spoiler_free_name: Lawyer
+description: Manipulates existing rules to suit their interests. They are proficient at loophole exploitation, possess extreme physicality, use bribery to achieve various effects, distort words, actions, and intent, disorder all sorts of things, and dominate others. 
+sequences:
+  - number: 9
+    name: Lawyer
+    potion: A sticky, black liquid that even stains the surrounding air.
+    ingredients:
+      - One "Wisdom Fruit"
+      - The tongue of a maze parrot
+    abilities: []
+  - number: 8
+    name: Barbarian
+    potion: A translucent black liquid with miniature organs, such as internal organs and tongue, sinking and emerging.
+    ingredients:
+      - Grass of Madness
+      - Core horn cystal of a Land Rhinoceros
+    abilities: []
+  - number: 7
+    name: Briber
+    potion: A clear, black liquid that bubbles constantly and looks delicious.
+    ingredients:
+      - 1 Weeping Infant Flower
+      - Strange-faced Cannabis Crystal
+    abilities: []

@@ -1,0 +1,19 @@
+name: Paragon
+spoiler_free_name: Savant
+description: Rational perfection, analysis, and universal understanding through pure intellect.
+sequences:
+  - number: 9
+    name: Savant
+    potion: N/A
+    ingredients: []
+    abilities: []
+  - number: 8
+    name: Archaeologist
+    potion: N/A
+    ingredients: []
+    abilities: []
+  - number: 7
+    name: Appraiser
+    potion: N/A
+    ingredients: []
+    abilities: []

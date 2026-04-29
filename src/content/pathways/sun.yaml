@@ -1,0 +1,19 @@
+name: Sun
+spoiler_free_name: Bard
+description: Light, fire, healing, and holy power. Strong against undead and darkness.
+sequences:
+  - number: 9
+    name: Bard
+    potion: N/A
+    ingredients: []
+    abilities: []
+  - number: 8
+    name: Light Suppliant
+    potion: N/A
+    ingredients: []
+    abilities: []
+  - number: 7
+    name: Solar High Priest
+    potion: N/A
+    ingredients: []
+    abilities: []

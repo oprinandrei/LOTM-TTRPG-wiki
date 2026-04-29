@@ -1,0 +1,66 @@
+---
+import '../styles/design-system.css';
+
+interface Props {
+    text: string;
+    color: 'common' | 'rare' | 'status'; // Enforce defined types
+}
+
+const { text, color } = Astro.props;
+
+const badgeClasses = `badge type-${color}`;
+---
+
+<div class={badgeClasses}>
+    <!-- Slot/Content -->
+    <slot />
+</div>
+
+<style>
+    /* Global Variables Fallback/Definition */
+    :root {
+        /* Use the pre-defined variables to ensure proper scoping */
+        --color-badge-bg: var(--color-background-card);
+        --color-badge-text: var(--color-text-default);
+        --color-border: var(--color-material-outline);
+    }
+
+    /* Base Styling for all Badges */
+    .badge {
+        /* Structural Styling */
+        background-color: var(--color-badge-bg);
+        color: var(--color-badge-text);
+        border: 1px solid var(--color-border);
+        padding: 4px 12px;
+        font-size: 0.875rem; /* 12px */
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s ease-in-out;
+        cursor: default;
+        white-space: nowrap;
+    }
+
+    /* Specific color mappings based on DESIGN.md */
+    .type-status {
+        /* Teal/Primary */
+        /* Use the primary color variable defined in the CSS */
+        --color-badge-bg: var(--color-primary-container);    
+        --color-badge-text: var(--color-primary-light);    
+        --color-border: var(--color-primary);
+    }
+    .type-rare {
+        /* Purple/Secondary */
+        --color-badge-bg: var(--color-secondary-container); 
+        --color-badge-text: var(--color-text-default);
+        --color-border: var(--color-secondary);
+    }
+    /* Common fallback */
+    .type-common {
+        --color-badge-bg: var(--color-background-card);
+        --color-badge-text: var(--color-text-muted);
+        --color-border: var(--color-material-outline);
+    }
+</style>

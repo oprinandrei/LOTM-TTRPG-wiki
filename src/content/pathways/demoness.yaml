@@ -1,0 +1,19 @@
+name: Demoness
+spoiler_free_name: Assassin
+description: Centered around causing disaster and catastrophe.
+sequences:
+  - number: 9
+    name: Assassin
+    potion: Dull, inconspicuous liquid that inexplicably induces thirst.
+    ingredients: []
+    abilities: []
+  - number: 8
+    name: Instigator
+    potion: An obsidian potion fizzing with tiny bubbles, as though harboring hidden desires and ill intent. An acute pain would course from their mouth down to their esophagus, radiating to their brain and other parts of their body.
+    ingredients: []
+    abilities: []
+  - number: 7
+    name: Witch
+    potion: A dark-red potion with concealed shadows. It tasted icy, and illusory, like melting frost. Dreamlike, romantic rose-colored liquid.
+    ingredients: []
+    abilities: []

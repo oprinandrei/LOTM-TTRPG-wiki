@@ -1,0 +1,19 @@
+name: Twilight Giant
+spoiler_free_name: Warrior
+description: Raw physical supremacy, battlefield dominance, and war incarnate.
+sequences:
+  - number: 9
+    name: Warrior
+    potion: N/A
+    ingredients: []
+    abilities: []
+  - number: 8
+    name: Pugilist
+    potion: N/A
+    ingredients: []
+    abilities: []
+  - number: 7
+    name: Weapon Master
+    potion: N/A
+    ingredients: []
+    abilities: []

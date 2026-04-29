@@ -1,0 +1,19 @@
+name: Error
+spoiler_free_name: Marauder
+description: Deception, identity theft, fate manipulation, and parasitism. The ultimate trickster.
+sequences:
+  - number: 9
+    name: Marauder
+    potion: Deep blue-black, bitter taste.
+    ingredients: []
+    abilities: []
+  - number: 8
+    name: Swindler
+    potion: A dreamlike liquid bubbling with crimson foam; sweet yet agonizingly painful.
+    ingredients: []
+    abilities: []
+  - number: 7
+    name: Cryptologist
+    potion: Mist-like with glimmering specks; induces scalp-piercing pain akin to skin peeling.
+    ingredients: []
+    abilities: []

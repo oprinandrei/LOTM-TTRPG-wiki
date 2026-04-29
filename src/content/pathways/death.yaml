@@ -1,0 +1,19 @@
+name: Death
+spoiler_free_name: Corpse Collector
+description: Powers related to the dead and spirits.
+sequences:
+  - number: 9
+    name: Corpse Collector
+    potion: Blackish corpse fluid reeking of decay.
+    ingredients: []
+    abilities: []
+  - number: 8
+    name: Gravedigger
+    potion: Dark green liquid streaked with blood.
+    ingredients: []
+    abilities: []
+  - number: 7
+    name: Spirit Medium
+    potion: Transparent liquid with psychedelic hues.
+    ingredients: []
+    abilities: []

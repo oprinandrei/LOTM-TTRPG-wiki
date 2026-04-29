@@ -1,0 +1,19 @@
+name: Hanged Man
+spoiler_free_name: Secrets Suppliant
+description: ''
+sequences:
+  - number: 9
+    name: Secrets Suppliant
+    potion: A sacred black liquid intermittently bubbling with a bitter taste.
+    ingredients: []
+    abilities: []
+  - number: 8
+    name: Listener
+    potion: A hallucinogenic, multicolored liquid with a dark core; induces spiritual euphoria upon consumption.
+    ingredients: []
+    abilities: []
+  - number: 7
+    name: Shadow Ascetic
+    potion: A gray-black liquid reflecting countless faces of the drinker; cold, bitter, and stinging.
+    ingredients: []
+    abilities: []
