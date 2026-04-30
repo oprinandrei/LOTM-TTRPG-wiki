@@ -1,11 +1,183 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const pathways = await getCollection('pathways');
+const characters = await getCollection('characters');
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="Lord of Mysteries — TTRPG Reference">
+  <main class="home">
+    <section class="hero">
+      <h1>The Beyond Awaits</h1>
+      <p class="hero-sub">A TTRPG reference for the Lord of Mysteries system. Fast lookup for pathways, characters, and rules — built for the table.</p>
+      <div class="hero-actions">
+        <a href="/pathways" class="btn btn--primary">Browse Pathways</a>
+        {characters.length > 0 && (
+          <a href="/characters" class="btn btn--secondary">Characters</a>
+        )}
+      </div>
+    </section>
+
+    <section class="nav-cards">
+      <a href="/pathways" class="nav-card">
+        <div class="nav-card__icon">⬡</div>
+        <h2>Pathways</h2>
+        <p>{pathways.length} pathways — sequences, potions, and Beyonder abilities.</p>
+      </a>
+      <a href="/characters" class="nav-card nav-card--dim">
+        <div class="nav-card__icon">◈</div>
+        <h2>Characters</h2>
+        <p>Player character statblocks, HP &amp; Sanity trackers, inventory.</p>
+        {characters.length === 0 && <span class="coming-soon">No characters yet</span>}
+      </a>
+      <a href="/rules" class="nav-card nav-card--dim">
+        <div class="nav-card__icon">✦</div>
+        <h2>Rules</h2>
+        <p>Actions, conditions, and mechanics reference.</p>
+        <span class="coming-soon">Coming soon</span>
+      </a>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .home {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem var(--spacing-gutter);
+  }
+
+  /* ── Hero ── */
+  .hero {
+    text-align: center;
+    padding: 4rem 0 3rem;
+    border-bottom: 1px solid var(--color-material-outline);
+    margin-bottom: 3rem;
+  }
+
+  .hero h1 {
+    font-family: var(--font-headline);
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-text-heading);
+    margin: 0 0 1rem;
+    text-shadow: 0 0 40px color-mix(in srgb, var(--color-primary) 40%, transparent);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    max-width: 540px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ── Buttons ── */
+  .btn {
+    font-family: var(--font-label);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.65rem 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid;
+    transition: box-shadow 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .btn--primary {
+    background-color: var(--color-primary-container);
+    color: var(--color-primary-light);
+    border-color: var(--color-primary);
+  }
+
+  .btn--primary:hover {
+    box-shadow: 0 0 16px color-mix(in srgb, var(--color-primary) 50%, transparent);
+  }
+
+  .btn--secondary {
+    background-color: transparent;
+    color: var(--color-text-muted);
+    border-color: var(--color-material-outline);
+  }
+
+  .btn--secondary:hover {
+    color: var(--color-text-default);
+    border-color: var(--color-text-muted);
+  }
+
+  /* ── Nav cards ── */
+  .nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .nav-card {
+    background-color: var(--color-background-card);
+    border: 1px solid var(--color-material-outline);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    display: block;
+  }
+
+  .nav-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  }
+
+  .nav-card--dim {
+    opacity: 0.65;
+  }
+
+  .nav-card--dim:hover {
+    opacity: 1;
+  }
+
+  .nav-card__icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary-light);
+  }
+
+  .nav-card h2 {
+    font-family: var(--font-headline);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    color: var(--color-text-heading);
+  }
+
+  .nav-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .coming-soon {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-family: var(--font-label);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-material-outline);
+    border-radius: var(--radius-full);
+    padding: 2px 8px;
+  }
+</style>

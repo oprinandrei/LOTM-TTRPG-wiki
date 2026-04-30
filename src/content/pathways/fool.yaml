@@ -23,9 +23,9 @@ sequences:
       - 1 Human-Faced Rose Complete Stalk
     abilities:
       - name: Danger Premonition
-        description: Triggers on ambush or when single damage exceeds ½ max HP. DC 15 Inspiration: learn danger form; +4 Physical Defense temporarily. [Seq 7] Danger appears as images, not thoughts. [Seq 6] Auto-success on Inspiration check. [Seq 5] Can foresee danger from targets 1 level above you.
+        description: "Triggers on ambush or when single damage exceeds ½ max HP. DC 15 Inspiration: learn danger form; +4 Physical Defense temporarily. [Seq 7] Danger appears as images, not thoughts. [Seq 6] Auto-success on Inspiration check. [Seq 5] Can foresee danger from targets 1 level above you."
       - name: Paper Blades
-        description: 1 attack action. Throw paper/tarot cards as 1d4 + ½ STR damage die (physical). Chain up to 3 cards per action; each extra card is –2 to hit.
+        description: "1 attack action. Throw paper/tarot cards as 1d4 + ½ STR damage die (physical). Chain up to 3 cards per action; each extra card is –2 to hit."
       - name: Muscle Mastery
         description: +2 to all muscle-related checks (fighting, throwing, shooting, performance, stealth). Silent movement by default. Fast Dodge (retain full Physical Defense vs. firearms).
   - number: 7
@@ -38,7 +38,7 @@ sequences:
       - name: Injury Transfer
         description: 1 cast action, 2 SP. Touch a living creature — transfer wounds from vital areas to less critical body parts. Turns potentially lethal hits into minor ones.
       - name: Flame Jump
-        description: Swift action. Teleport short distances through flames or SP expenditure. Leaves no trace. [Seq 3] Up to 5 km range.
+        description: "Swift action. Teleport short distances through flames or SP expenditure. Leaves no trace. [Seq 3] Up to 5 km range."
       - name: Create Illusions
         description: Craft convincing visual hallucinations.
       - name: Paper Doll Substitute
