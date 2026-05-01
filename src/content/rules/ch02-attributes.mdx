@@ -1,0 +1,257 @@
+---
+title: "Attributes"
+chapter: 2
+description: "The eight attributes, derived stats, defense, carrying capacity, and clothing."
+---
+
+## The Eight Attributes
+
+**Charisma · Strength · Luck · Agility · Physique · Will · Inspiration · Education**
+
+Each attribute ranges from 0 upward. The scale:
+
+| Score | Meaning |
+|-------|---------|
+| 0 | This ability does not exist |
+| 1 | Far below normal |
+| 2 | Below normal |
+| 3 | Average — a typical person |
+| 4 | Clearly above average |
+| 5 | Exceptional — a very strong individual |
+| 6 | Human limit |
+
+### Generating Attributes
+
+Roll **2d3** for each attribute, or use **point buy**: you have **32 points** to distribute freely, with a minimum of 2 in any attribute.
+
+### How Attributes Work
+
+When making a check, the relevant attribute is added directly to your skill roll:
+
+> **1d20 + Skill + Attribute**
+
+For example, a Fighting check uses Strength. If your Fighting is 4 and your Strength is 5, you roll 1d20 + 4 + 5.
+
+Attributes generally don't change — except when gained from potions, or through very rare circumstances.
+
+---
+
+## Spirituality (Mana / Spell Points)
+
+**Starting Spirituality** = Initial Will + Initial Inspiration
+
+Each sequence level you advance adds your **current Inspiration** value to your Spirituality cap.
+
+**Formula:** `(Initial Will + Initial Inspiration) + (number of sequence levels advanced × current Inspiration)`
+
+> **Example:** A character starts with Will 4 and Inspiration 6 (10 base Spirituality). At Sequence 9, a potion boosts Inspiration to 7. Their total is 10 + 7 = 17. At Sequence 8, Inspiration rises to 8. Total becomes 10 + 7 + 8 = 25.
+
+*(If using an automated character sheet, it handles this automatically. Just keep your current sequence number updated in the top-left corner.)*
+
+**Digestion Bonus:** For every 5 points of Digestion you have, your Spirituality cap increases by 1 (duplicate potions of the same sequence don't count).
+
+**High-Sequence Multipliers:**
+- Sequence 4 (Demigod): Spirituality cap ×2
+- Sequence 2 (Angel): Spirituality cap ×2 again (×3 cumulative)
+- Sequence 0: ×4 cumulative
+- King of Angels stage: +50% of existing Spirituality
+- The Old Days: ×3 total multiplier
+- The Pillar: ×4 total multiplier
+
+*(Note: At the Pillar level, these values are effectively theoretical — any blow from such a being is catastrophic on a cosmic scale.)*
+
+---
+
+## Sanity
+
+**Maximum Sanity** = Will + 10
+
+This is also your Sanity cap — you cannot recover Sanity beyond this value (except through Sanity Shields or special abilities).
+
+### Sanity Checks
+
+When you might lose Sanity, roll **1d20 vs. your current Sanity**:
+- **≤ your current Sanity:** Success — no loss
+- **> your current Sanity:** Failure — take the corresponding Sanity damage
+
+**Consequences of Sanity Loss (in one instance):**
+- Lose **3+ points:** Risk of temporary madness
+- Lose **6+ points:** Risk of prolonged madness
+- Reach **0 Sanity:** Permanent madness
+
+---
+
+## Hit Points
+
+**Starting HP** = Physique + 10
+
+Each time you advance a Sequence level, add your **current Physique** to your HP maximum.
+
+**Formula example:** A character with Physique 4 starts with 14 HP. After Sequence 9 (Physique rises to 6): 14 + 6 = 20 HP. After Sequence 8 (Physique rises to 7): 20 + 7 = 27 HP.
+
+*(Again, automated character sheets handle this — just keep your current sequence number correct.)*
+
+**Digestion Bonus:** For every 5 points of Digestion, your HP cap increases by 1 (duplicate potions excluded).
+
+### High-Sequence HP Multipliers
+
+Starting at Sequence 4, the nature of a Beyonder's life changes significantly:
+
+- **Sequence 4:** Current HP cap ×2 immediately upon promotion
+- Each subsequent advance also doubles the HP *gained at that level* (e.g., Sequence 4 Physique adds ×2 HP, Sequence 2 adds ×3, Sequence 0 adds ×4)
+- **Sequence 2:** Total HP cap ×2 again from the Sequence 4 baseline
+- **Sequence 0:** ×2 again
+
+### Death and Unconsciousness
+
+- **HP reaches 0:** You fall unconscious. Each round, roll a **Physique check (Difficulty 10)** or die.
+- **HP goes negative:** You can survive negative HP equal to your Physique score. If a single hit drops you below that negative threshold instantly, you die immediately.
+- **While in negative HP:** If you take further damage, roll a **Physique check (Difficulty 10 + damage × 2)** or die.
+- **Stabilization:** A Medicine check as a casting action stabilizes a dying character — no further death checks required.
+
+---
+
+## Movement
+
+A **Move action** lets you travel a distance in meters equal to **Strength + Agility**.
+
+---
+
+## Defense
+
+There are three types of defense difficulty, all rolled against with **1d20 + modifier**:
+
+| Defense Type | Formula |
+|---|---|
+| **Physical Defense** | 10 + Agility + Armor bonus + Dodge skill |
+| **Will Defense** | 10 + Will |
+| **Physique Defense** | 10 + Physique |
+
+Some abilities grant additional defense types (e.g., "Deflected Defense" — an invisible force redirects incoming attacks). These are noted in the specific ability descriptions.
+
+---
+
+## Attribute Damage Bonus
+
+When a skill deals damage that scales with an attribute (e.g., "2d6 + Strength damage die"), use the following table:
+
+| Attribute Score | Damage Bonus |
+|---|---|
+| 0 | −2 |
+| 1 | −1 |
+| 2 | +0 |
+| 3 | +1 |
+| 4 | +1d2 |
+| 5 | +1d4 |
+| 6 | +1d6 |
+| 7 | +1d8 |
+| 8 | +1d10 |
+| 9 | +1d12 |
+| 10 | +2d6 |
+| 11 | +2d8 |
+| 12 | +2d10 |
+| 13 | +2d12 |
+| 14 | +3d8 |
+| 15 | +3d10 |
+
+> Scores above 15 require supernatural Beyonder power to achieve. Beyond 30, treat as 30 for calculation purposes.
+
+| Score | Damage Bonus |
+|---|---|
+| 20 | +3d12 |
+| 25 | +4d10 |
+| 30 | +4d12 |
+
+---
+
+## Carrying Items
+
+Some Beyonder abilities depend on how many items you're carrying (e.g., a Magician's paper figurines, a Seer's spell materials). The carry system works as follows:
+
+### Step 1 — Theoretical Item Slots
+
+**Strength × 2** = maximum items you can carry based on raw strength (independent of pockets/bags).
+
+### Step 2 — Actual Carrying Capacity
+
+Your clothing and bags determine how many **pockets** you have. You need both the strength and the pocket space:
+
+| Clothing | Item Slots | Pockets |
+|---|---|---|
+| Poor clothes | 2 | 2 |
+| Ordinary clothes | 4 | 2–4 |
+| Formal/Performance Tuxedo | 8 | 4–8 (+ 2 hidden optional) |
+| Wizard Robe | 12 | 8–12 (+ 4 hidden) |
+
+*Court dress and women's formal wear may have 1 fewer tier of item slots — discuss with your GM.*
+
+### Step 3 — Overloaded Carrying
+
+If you carry more items than your theoretical slot limit, each excess item imposes:
+- **Strength: effectively +1 slot used** (you're straining)
+- **Agility: −1** (reduced mobility, affects Physical Defense)
+
+### Step 4 — Handheld / Worn Items
+
+Items worn on the body (scabbards, holsters, slings) count only against **theoretical slots**, not pocket count.
+
+### Hidden Bags
+
+Items in a hidden bag are not valid targets for others' search checks by default — except thieves with advanced detection abilities. If you're unconscious and someone searches you, they need a **Difficulty 15 Detection check** and a **full-round action** to find a hidden bag.
+
+---
+
+## Bags and Backpacks
+
+| Bag Type | Extra Slots | Hidden Pockets | Action to Retrieve |
+|---|---|---|---|
+| Messenger Bag | +2 | 1 optional | Move action |
+| Backpack | +4 | 2 optional | Full-round action |
+| Suitcase | +6 | 3 optional | Full-round action |
+| Large Suitcase | +8 | 4 optional | Full-round action |
+
+> **Warning:** Fighting while lugging a suitcase (or larger) imposes a **−2 penalty** on all skill and ability checks.
+
+---
+
+## Item Sizes
+
+| Size | Examples | Slots Used |
+|---|---|---|
+| Tiny (3 per slot) | Paper figurine, matchbox, pen, candle | 1 slot per 3 items |
+| Small (2 per slot) | Mini notebook, tarot cards, charm, necklace | 1 slot per 2 items |
+| Medium-small | Knife, whip, potion bottle, revolver, purse | 1 slot each |
+| Medium *(backpack only)* | Sword, rifle, wine bottle | 2 slots each |
+| Medium-large *(suitcase only)* | Steam rifle, longbow, sniper rifle | 3 slots each |
+| Large *(large suitcase only)* | Giant weapon, shell, full plate armor | 4 slots each |
+
+---
+
+## Reputation and Clothing Requirements
+
+To wear certain clothing without drawing attention, your Reputation skill must meet the threshold:
+
+| Clothing | Minimum Reputation |
+|---|---|
+| Poor clothes | Untrained–Trained |
+| Ordinary clothes | Trained–Proficient |
+| Formal/Tuxedo | Proficient–Advanced |
+| Wizard Robe | Advanced–Master |
+
+*Exception: Official or military characters with appropriate justification may requisition clothing above their Reputation tier.*
+
+---
+
+## Upgrading Clothing (Craft Manufacturing)
+
+A character with Craft Manufacturing skill (or a commissioned artisan) can add pockets and slots to existing clothing:
+
+| Craft Level | Difficulty | Slots Added | Hidden Bags |
+|---|---|---|---|
+| Proficient | 15 | +2 | 1 |
+| Advanced | 15 | +3 | 2 |
+| Master | 20 | +4 | 3 |
+| Erudite | 25 | +5 | 4 |
+| Grandmaster | 30 | +6 | 5 |
+
+*Each item of clothing can only be upgraded once. The artisan's tier determines what upgrades you can commission based on your Reputation level.*

@@ -1,0 +1,522 @@
+---
+title: "Combat"
+chapter: 5
+description: "Rounds, actions, initiative, special actions, weapons, damage types, and status conditions."
+---
+
+## The Round
+
+One combat round represents approximately **6 seconds** of action.
+
+---
+
+## Actions Per Round
+
+Each participant in combat gets the following actions per round:
+
+| Action Type | Count | Notes |
+|---|---|---|
+| **Attack / Casting action** | 1 | Choose one: a physical attack OR use an Extraordinary ability |
+| **Swift actions** | 3 | Fast actions like drawing a weapon, pulling a bolt, snapping fingers |
+| **Move action** | 1 | Move up to your Movement distance (Strength + Agility in meters) |
+| **Free actions** | Unlimited | Speech, maintaining a pose, activating Spirit Vision, etc. |
+
+**Converting actions:**
+- 1 Attack/Casting action → 2 Swift actions (but not the reverse)
+- A **Full-Round action** consumes all your actions (1 attack, 3 swift, 1 move) and takes until the beginning of your next turn to complete
+
+**Actions cannot be saved** between rounds.
+
+### Action Speed (Priority)
+
+Free action > Swift action > Attack/Casting = Move action
+
+Free and Swift actions can be used **on other characters' turns**, but cannot interrupt an action already in progress. An attack that is already halfway through still resolves — a swift action taken simultaneously takes effect at the same time, not before.
+
+### Extra Actions (from Abilities or Items)
+
+Extra actions from Extraordinary abilities or Sealed Items are subject to a soft cap:
+
+- The **1st** extra action of a type is fully valid.
+- The **2nd** extra action of the same type is invalid, but **2 invalid actions combine into 1 valid action.**
+- The **3rd** valid action requires 3 invalid actions combined, and so on.
+
+> This cap only applies to externally granted actions (items, ritual magic). Extra actions from your own Extraordinary abilities or Mythological Form are not affected.
+
+---
+
+## Initiative
+
+At the start of combat, each participant rolls **1d20 + Agility** for initiative. Actions resolve from highest to lowest.
+
+---
+
+## The Surprise Round
+
+If one side catches the other completely off guard before combat begins:
+
+1. The **ambushing side** gets 1 free round — each ambusher may take 1 attack/casting action, 1 move action, or 2 swift actions.
+2. The **ambushed side** takes no actions at all.
+3. If the ambushing side remains undetected during this round, the ambushed side is **Caught Off Guard** (loses Agility and Dodge from Physical Defense) for the duration of the surprise round.
+4. After the surprise round, combat proceeds normally.
+
+---
+
+## Making Attacks
+
+**To hit:** Roll **1d20 + Attribute + Skill** vs. the target's **Physical Defense.**
+
+There is no active dodge roll — evasion is built into the Physical Defense value:
+
+> **Physical Defense = 10 + Armor + Agility + Dodge**
+
+If your attack roll exceeds the target's Physical Defense, you hit and roll damage.
+
+### Firearms Are Harder to Dodge
+
+Guns fire faster than any human can react. Against **firearms**, Physical Defense is reduced:
+
+> **Physical Defense (vs. Firearms) = 10 + Armor**
+
+Agility and Dodge do not apply — *unless the target has the Quick Dodge ability*, in which case full Physical Defense applies.
+
+---
+
+## Movement in Combat
+
+One Move action lets you travel up to **Strength + Agility** meters.
+
+Move actions can also be used to:
+- Pick up an item from your person (costs ~1 meter of movement distance)
+- Pick up or move an item nearby (costs ~2 meters of movement distance)
+- The remaining distance is how far you can travel afterward
+
+Move actions can be used on other characters' turns but **cannot be carried over** to the next round.
+
+---
+
+## Special Actions
+
+### Raid (Surprise Attack)
+
+A raid is landing an attack before your target can react.
+
+| Type | Trigger | Benefit |
+|---|---|---|
+| **Pre-battle Raid** | Catching enemies undetected before combat starts | Grants a full Surprise Round |
+| **Mid-battle Raid** | Teleporting/jumping to an unexpected position during combat | Advances your action in the turn order; gain Advantage/Disadvantage |
+| **Stealth Raid** | Attacking while invisible or hidden during combat | Same as mid-battle raid |
+| **Insertion Raid** | Joining an ongoing battle from outside | Same effect as a pre-battle raid |
+
+After the surprise round ends, Advantage/Disadvantage from raiding clears — unless a siege or flanking condition is maintained.
+
+---
+
+### Spiritual Intuition
+
+Passive ability — no action required. A **Difficulty 25 Inspiration** check, triggered by the GM or requested by the player.
+
+- Acts as a low-power form of divination: delivers vague warnings ("don't do this," "something's wrong here") without specifics.
+- Repeated checks on the same situation give the same result unless something changes.
+- Blocked by anti-divination abilities.
+- **Against mythological forms 1+ Sequences above you:** Difficulty drops to 10 automatically. At 2+ above you, it succeeds by default.
+- At **Sequence 2+**, this becomes **Divine Intuition.**
+
+---
+
+### Showing Mythic Runes (Sequence 4+ only)
+
+**1 Swift action.** You partially reveal your mythological form — just one body part — causing the runes of your mythical nature to emerge.
+
+- Targets who witness this immediately suffer a Sanity check as though they'd witnessed your mythological form (using the personality gap).
+- Does not apply to Sequence 2+ targets, as they are already complete mythological creatures and can witness each other normally.
+- Smart targets may close their eyes or look away if they succeed a **Difficulty 10 Spiritual Intuition check** beforehand.
+
+---
+
+### Meditation
+
+**Full Meditation (1 Casting action):**
+- You are Caught Off Guard until the action completes.
+- On completion: Will +2, Inspiration +1 temporarily; all emotional effects on your body are cleared.
+- Cannot clear effects from entities 1+ Sequence above you — only halves them.
+
+**Half Meditation (1 Swift action per round to maintain):**
+- Will +1 temporarily; halves emotional effects already on you (round up).
+- Cannot clear the strongest-tier emotional effects or those from 1+ Sequence above you.
+- Can calm normal emotional effects from 1 Sequence below you.
+
+---
+
+### Grapple
+
+**1 Attack action.** Fighting check vs. Physical Defense (ignores armor). On success: target is **Bound.**
+
+- Both you and the grappled target gain Advantage/Disadvantage against each other.
+- Neither can use Attack or Move actions while grappling (except the squeeze attack below).
+- The target may use 1 **Strength check** (no action cost) each round to break free.
+- While grappling, you may **squeeze**: once per round, Strength check vs. Constitution, dealing Strength damage dice on success.
+- **One-handed grapple:** You restrict movement only (not attack actions). Your own Strength check to maintain is halved. Switching grip is a Swift action.
+
+**Size differences:**
+- 2 size levels apart: the smaller creature can only restrict the larger one's movement, not its attacks.
+- 4 size levels apart: the smaller creature cannot grapple at all.
+- Twice the Strength difference counts as a 2-level size gap and stacks with actual size differences.
+
+---
+
+### Aiming (Gaining Momentum)
+
+**1 Swift action.** You carefully line up your next attack.
+
+- Grants **+2** to one attack/casting check targeting another creature.
+- For **continuous fire** (e.g., 3 shots from a revolver), each shot requires its own Swift action to aim.
+
+---
+
+### Double Hit
+
+Available only when your weapon is a **fist or short blade.**
+
+- Switch the melee check's attribute from **Strength to Agility** and make **two checks** in one Attack action.
+- Short blades/darts used as throwing weapons can also use Double Hit (consumes item charges).
+
+---
+
+### Close-Range Shot
+
+**1 Attack action.** Target must be **within 1 meter.**
+
+- vs. targets **without Quick Dodge:** Three shots in one action, all with Momentum Aiming bonus (no Swift action cost). First shot hits automatically if it exceeds the target's armor alone.
+- vs. targets **with Quick Dodge (but not light/lightning speed):** First shot ignores Agility and Dodge. All three shots gain Momentum Aiming bonus.
+- vs. targets **who can dodge light/lightning:** Only the Momentum Aiming bonus applies.
+
+> If the target has declared they're ready for your close-range shot, no benefits apply.
+
+---
+
+### Borrowed Protection
+
+Pick up nearby objects or duck behind cover to improve your defense.
+
+**1 Swift action (pick up object):** Hold an object in front of you for an Armor bonus, as long as attacks can't bypass it.
+
+**1 Move action (take cover):** Hide behind an obstacle for the Armor bonus below. If you're fully behind a hard wall, you cannot be targeted unless the attacker can penetrate walls.
+
+| Cover / Object | Armor Bonus |
+|---|---|
+| Small item (bottle, book, small bench, short blade) | +2 |
+| Medium-small item (chair, small table, sword) | +3 |
+| Medium item (door, long table, large weapon) | +4 |
+| Medium-large item (bed, chest, partial wall) | +5 |
+| Large item (wall section, carriage) | +6 |
+
+Add **+2** to any metal object.
+
+**Strength required to pick up objects:**
+- Every 2 Strength allows lifting one size category of object.
+- Add +2 Strength required for metal objects.
+- Fixed structures (walls connected to foundations) require twice the normal Strength.
+- If you don't meet the requirement: Difficulty (15 + size level × 2) Strength check.
+- If you take a hit while using an object for cover, the object is damaged.
+
+---
+
+### Delayed Action
+
+You declare a specific trigger condition and defer an action to that moment.
+
+- The deferred action is **voided** if the declared condition never occurs.
+- Cannot be carried to the next round.
+
+---
+
+### Charge (Rush)
+
+**1 Attack action + possibly 1 Move action.** Strength check vs. target's Strength or Agility.
+
+On success: target gains **Loss of Balance** — Agility temporarily halved (rounded up), affecting movement and Physical Defense. They need 1 Move action to stand up.
+
+---
+
+### Leverage (Counter-throw)
+
+**1 Attack action.** Must target a creature that just made a melee attack on you and **missed.**
+
+- **If your Strength is 3+ lower than the attacker, or you're 2 size levels smaller:** Grab their attacking wrist and flip them. They land for 1d3 + your Strength damage dice. Unless they have a balance ability, they must pass a **Difficulty 20 Agility check** or fall. Failure on this check = stunned for 1 round (head hit).
+- **Otherwise:** You immediately deal one free attack against them (check succeeds automatically).
+
+---
+
+### Leg Sweep
+
+Only usable if your Agility is 5 or 6+.
+
+**1 Attack action.** Fighting (Melee) check using your legs — reaches up to half your height (rounded down). Can target up to 3 adjacent standing targets.
+
+- Damage: half Strength damage dice (rounded up)
+- If you fail: you lose your balance
+- On a miss, the target may use a Swift action to one-hand grapple you, or use Strength to counter, each dealing half Strength damage dice
+
+---
+
+### Feint
+
+**1 Swift action.** Deception/Performance check (or a Proficient+ Fighting check for melee only) vs. target's Detection or Inspiration.
+
+On success: your next attack against this target ignores their Agility and Dodge contributions to Physical Defense.
+
+Counts as a raid-type action — gains Advantage/Disadvantage benefits.
+
+---
+
+### Intimidate (In Combat)
+
+**1 Swift action, once per round.** Choose 1 target within 1 meter. Intimidate check vs. Will Defense.
+
+On success: the target **must** use their next Move action to move away from you. If they have no Move action now, they must use their first Move action next round.
+
+---
+
+### Siege / Flanking
+
+Conditions that grant continuous Advantage/Disadvantage until the situation changes:
+
+| Condition | Benefit |
+|---|---|
+| Your side has 2× or more combatants than the enemy | Ongoing Advantage |
+| Your side has a combatant 1+ Sequence higher than any enemy | Ongoing Advantage |
+| You have blocked all the target's escape routes | Ongoing Advantage |
+| You can attack a target but they have no means to retaliate | Ongoing Advantage |
+
+If both sides fulfill conditions, count the number met — whoever meets more conditions holds the Advantage. If equal, neither side gains it.
+
+---
+
+### First Aid
+
+**1 Casting action** (if target is above half HP); **1 Full-Round action** (if at or below half HP).
+
+Ends: Bloodbath / Bleeding / Poisoning (from wounds only). Does **not** restore HP.
+
+Any injury of the same type that created these conditions will trigger them again until the target has fully rested or left the hazardous environment.
+
+---
+
+### Vital Strike
+
+**1 Attack or Casting action.** Target a specific body part. **−10 to the check.** On hit, applies effects based on location:
+
+| Target | Effect |
+|---|---|
+| **Head** | Stunned for 1 round + 2d6 extra damage |
+| **Eyes** | Blinded after 2 successful hits |
+| **Ears** | Deafened |
+| **Arm** | −2 to the target's combat attack checks (stacks additively) |
+| **Legs** | Movement reduced by 50% (stacks additively, cannot reach 0%) |
+| **Viscera** | 3d6 extra damage |
+
+**Recovery:** Each condition (except viscera damage) lasts until treated. Each First Aid or Medical treatment removes one instance.
+
+**Warning:** If a single Vital Strike deals more than half the target's max HP, permanent or residual damage results — unless the target has received a Constitution bonus from a potion, in which case full HP recovery also clears the damage.
+
+**If the armor is breached:**
+- Conventional damage (≥10 effective damage): armor has a gap; critical strikes against that gap deal +1d6 extra damage.
+- Firearm damage: armor is always breached if the attack hits, but the +1d6 only applies if the ≥10 damage threshold was also met.
+- For every 10 points of effective damage: the Vital Strike penalty against that location decreases by 2 (meaning vital strikes become easier as wounds accumulate).
+
+---
+
+### Limb Parry
+
+**1 Swift action.** Choose one of your limbs and declare it as the parrying limb.
+
+- Roll Agility vs. the incoming Vital Strike check. If you succeed, the vital strike hits your chosen limb instead of its intended target.
+- Each limb can only block once. Once all limbs have blocked once, this action is unavailable.
+- **Cannot block firearms** unless you can dodge light/lightning.
+
+---
+
+### Burning Luck
+
+**Free action, once per 24 hours.** Subtract any amount from your Luck (up to your full Luck score) and add it to a single skill check result.
+
+- Cannot push a result past a critical success/failure threshold.
+- Burned Luck recovers over 24 hours; Luck cannot drop below 0.
+- Applies to attack checks only — not damage rolls or Sanity checks (unless your GM permits).
+- The Destiny pathway has unique abilities that expand how Luck Burning can work.
+
+---
+
+## Weapons Reference
+
+### Cold Weapons (Melee)
+
+| Weapon | Damage | Notes |
+|---|---|---|
+| Fists | 1d2 + STR bonus | — |
+| Short blade | 1d4 + STR bonus | — |
+| Short blade (double hit) | 1d4 + ½ STR bonus | Two checks in one action; uses Fighting (Melee) |
+| Sword | 1d6 + STR bonus | — |
+| Huge weapon | 1d8 + STR bonus | Can hit enemies within 1m without contact |
+| Whip | 1d2 + ½ STR bonus | 1m reach; 3 attacks per action; −4/−6 on 2nd/3rd hit |
+| Cane/club (wood) | 1d3 + STR bonus | — |
+| Cane/club (hardened) | 1d4 + STR bonus | — |
+| Thrown item (light) | 1d3 + STR bonus | Up to 2×STR score in range |
+| Shortbow | 1d3 + ½ STR bonus | Uses Agility; range = STR score |
+| Longbow | 1d6 + STR bonus | Uses Strength; range = 2×STR score |
+| Hand crossbow | 1d6 | Swift action to reload each bolt |
+| Crossbow bolt | 2d6 | Full-round action to reload |
+
+### Firearms
+
+> All guns ignore Agility and Dodge in Physical Defense (except vs. Quick Dodge ability holders).
+
+| Weapon | Damage | Range | Capacity | Reload |
+|---|---|---|---|---|
+| Flintlock pistol | 1d4 | 80m | 1 | Full-round action |
+| Flintlock rifle | 1d8 | 150m | 1 | Full-round action |
+| Revolver | 1d6 | 30m | 6 | Attack action |
+| Revolver (special) | 1d6+2 | 50m | 6 | Attack action |
+| Bolt-action rifle | 2d6 | 160m | 5 | Full-round; free action to pull bolt per shot |
+| Semi-automatic rifle | 2d6 | 160m | 5 | Full-round; 3 shots/action, −2 each |
+| Single-barrel shotgun | 2d6 | 50m | 1 | Full-round |
+| Double-barrel shotgun | 2d6 | 50m | 2 | Full-round |
+| Steam rifle | 3d6 | 200m | 5 | Full-round |
+| Sniper rifle | 3d6+5 | 800m | 5–10 | Full-round |
+| Shell (artillery) | 4d6 | 10km | 1 | — |
+| Coastal defense cannon | 5d6 | 20km | 1 | — |
+
+**Shotgun special rules:** Even a failed attack check deals **half damage** if it exceeds the target's armor alone. Within 10m: +50% damage, ignore 2 armor. Within 5m: double damage (rounded up), ignore 3 armor.
+
+**Revolver:** 3 shots in one action, −2/−4/−6 cumulative disadvantage per shot.
+
+*Note: Steam rifles are military/church-only. Hunting weapons typically require a license (Proficient Reputation). Illegal possession risks Magistrate's Court.*
+
+### Explosives (Thrown)
+
+| Weapon | Damage | Area | Armor Penetration |
+|---|---|---|---|
+| Fragmentation grenade | 2d6 explosion + 1d6 physical | 5m | Ignore 2 armor |
+| Explosive grenade | 3d6 explosion | 5m | Ignore 3 armor |
+| Explosive/detonator | 2d6 explosion | 5m | Ignore 3 armor |
+| Molotov cocktail | 1d6 fire initial + 1d6/round (2 rounds) | 5m | — |
+
+*Molotov: extinguished by a Move action rolling on the ground.*
+
+### Armor
+
+| Armor | Armor Value | Damage Reduction | Agility Penalty | Strength Required |
+|---|---|---|---|---|
+| Cotton / leather | 2 | 2 physical | — | — |
+| Chain / iron armor | 4 | 3 physical & fire | −2 | — |
+| Half-plate | 6 | 4 physical & fire | −4 | 6 to move; 4 minimum |
+| Full plate | 8 | 5 physical & fire | −4 | 10 to move; 5 minimum |
+| Enchanted full plate | 8 | 5 all external | −2 | 8 to move; 4 minimum |
+
+*Enchanted plate is military/royal equipment and rarely seen outside wars or long escort duty.*
+
+---
+
+## Damage Types
+
+| Type | Notes |
+|---|---|
+| **Physical** | Standard melee/ranged. Low-sequence resistance common. Most affected by armor. |
+| **Curse** | Wounds appear pitch black with no blood. Suppresses natural HP recovery for half a day. Pierces most resistances; only Sun-path and same-domain beings resist it. |
+| **Fire** | Doubles damage to wood, vines, webs. Red Priest and Abyss paths specialize here. |
+| **Cold** | Lower damage, but imposes slowing effects — penalties to movement and checks. Best countered by fire resistance (not just a torch against mid-sequence cold). |
+| **Holy** | Near-universal — almost no beings can reduce or resist it. Extra bonus effects against dark/corrupt/undead only for Sun-path casters. Requires gold materials for Solar-path spells. |
+| **Lightning** | High output, high hit rate (ignores Agility/Dodge by default). Extra bonus against undead. Can be avoided by some earth-burrowing abilities. |
+| **Mental** | Targets Will Defense, which is typically low. Carries control side effects (shock, fear). Still affects undead (they have spirit bodies). |
+| **Toxin** | Targets Physique Defense (middle ground — not too high or low). Witch path and some Moon/Earth/Abyss abilities. |
+
+### Damage Reduction vs. Damage Resistance
+
+**Damage Reduction** (flat value): Reduces each hit's damage. Cannot reduce below 1. Excellent against many small hits; poor against single large hits.
+
+**Damage Resistance** (type-specific): Like damage reduction, but *can* reduce damage to 0. Usually comes with immunity to the type's secondary effects (fire resistance = unaffected by hot environments; cold resistance = immune to slowing).
+
+**Immunity:** Complete immunity to a damage type and all its secondary effects.
+
+---
+
+## Vehicle & Structure HP Reference
+
+| Vehicle / Structure | HP | Physical Defense | Damage Reduction |
+|---|---|---|---|
+| Carriage | 30 | 20 (5 armor, 5 agility) | — |
+| Small ship | 40 | 20 (5 armor, 5 agility) | — |
+| Medium ship | 60 | 25 (8 armor, 7 agility) | 5 physical |
+| Large ship | 80 | 30 (10 armor, 10 agility) | 8 physical |
+| Airship | 150 | 35 (15 armor, 10 agility) | 5 physical/fire |
+| Steam train | 150 | 40 (15 armor, 15 agility) | 5 physical/fire |
+| Ironclad ship | 150 | 40 (15 armor, 15 agility) | 15 physical/fire |
+| Building | 60 | 35 (25 armor) | 5 physical/fire |
+
+*Any ship or airship begins to sink/fall when HP drops below half. Stationary vehicles lose their Agility bonus to Physical Defense.*
+
+---
+
+## Creature Size Classes
+
+| Size Class | Examples |
+|---|---|
+| 1 — Microscopic | Insects, ants |
+| 2 — Small | Rats, birds, a human hand |
+| 3 — Small-Medium | Cats, dogs |
+| 4 — Medium | Humans, murlocs, young lions |
+| 5 — Medium-Large | Adult lions, bears, cattle |
+| 6 — Large | Giant descendants, large Extraordinary creatures, Feysacs |
+| 7 — Enormous | Ship-sized creatures, 4–6 meter giants |
+
+*Enormous creatures count as occupying a 2-level size span.*
+
+**Size gap bonuses in combat:**
+- For every level the enemy is **larger** than you: +1 to your checks hitting them.
+- For every level the enemy is **smaller** than you: +1d3 damage against them; −1 to your checks.
+
+---
+
+## Special Status Conditions
+
+| Status | Effect |
+|---|---|
+| **Loss of Balance** | Agility halved (round up); cannot Move. Requires 1 Move action to stand. Dodge only by rolling. |
+| **Helpless** | No ability to act. Attacks against helpless targets have Advantage (no Disadvantage roll). No need for Vital Strike disadvantage. |
+| **Silence** | Cannot produce sound. Language-dependent abilities and actions cannot be used. |
+| **Bound** | Cannot Move. Loses Agility and Dodge from Physical Defense. May still squirm (movement = Physique) but remains without Agility/Dodge in defense. Vital Strikes against Bound targets have no disadvantage penalty. |
+| **Caught Off Guard** | Loses Agility and Dodge from Physical Defense. Typically from undetected raids or Full Meditation. |
+| **Advantage / Disadvantage** | Advantage: +2 to all skill/attribute checks against the target. Disadvantage: −2 to target's Agility and Dodge in Physical Defense. *(Shorthand: combine as +4 on checks for the advantaged party.)* Does not stack from multiple sources — only the better condition applies. |
+| **Stunned** | Lose 1 Attack/Casting/Move action OR 2 Swift actions per round (your choice). Cannot stack with itself, but other action-limiting effects still apply. |
+| **Blind** | All targeted actions need a Difficulty 15 Inspiration check to locate the target first. Can locate via Difficulty 15 Listening check. Cannot make Vital Strikes (unless positioned). Treated as Caught Off Guard vs. attacks you can't locate. |
+| **Deaf** | All hearing checks automatically fail. Extraordinary hearing is halved (not fully negated unless the deafness is itself extraordinary and the gap is 2+ Sequences). |
+| **Invisible** | Enemies must succeed a Reconnaissance/Listening check vs. your Stealth check to locate you. Area effects ignore invisibility. Spiritual creatures (no sound) require Inspiration vs. Stealth to find. |
+| **Fear** | −4 to all checks involving the source of fear. Each Move action must move away from the source. Resisting forced movement: Difficulty 15 Will check. Success ends forced movement until a new Fear effect triggers. |
+| **Angry / Taunted** | Must attack/pursue the source. −4 to all skill/attribute checks. Begin each turn with a Difficulty 20 Will check to recover, or use Full Meditation. Half Meditation only halves the penalty. A Difficulty 20 Psychology check or harm to something you care about clears it immediately. |
+| **Bloodbath** | HP below half of maximum. **Ordinary people:** Difficulty 15 Physique check at round start or fall unconscious; also lose 1d2 HP per round until treated. **Beyonders with Constitution bonuses from potions:** Do not fall unconscious, still bleed but don't lose HP from it — however, abilities that specifically target Bloodbath creatures still apply. |
+| **Bleeding** | Active HP loss — 1d2 HP at round start. Persists even after leaving Bloodbath until First Aid or Medical treatment. Internal bleeding (e.g., from disease or poison) requires extraordinary medical aid or a hospital. |
+| **Dying** | HP at 0 or below. **Ordinary people:** Can only take 3 free actions + 1 swift action per round; a Difficulty 15 Will check converts these into 1 attack/cast/move (half Movement). Difficulty 15 Physique check each round or die. **Beyonders with Constitution bonuses:** Act normally. |
+| **Dead** | HP drops below the negative of your Physique score in one blow = instant death for ordinary people. For Beyonders, the threshold is twice that negative value. Beyonder characteristics separate from the body after 5 minutes. The spirit lingers in the body ~24 hours, then departs. Requiem-administered corpses cannot be raised as undead. |
+
+---
+
+## GM Advice: Running Combat
+
+- **Give enemies intelligence.** If a battle is unfavorable, enemies should attempt to retreat and regroup, not just stand and fight until death. Cheap, too-easy victories reduce the tension of combat.
+- **Balance encounter numbers dynamically.** Adjust enemy evasion and fighting values against the party's Physical Defense and skill bonuses. Aim for roughly 50/50 hit rates at low sequences, with 2–3 rounds of average damage to reach dangerous HP territory (outside boss fights).
+- **Use special actions.** Encourage players and design enemies to use special moves — they create dramatic, dynamic combat and help close or widen the gap between sequences.
+- **Group combat flow.** When four or more participants are on screen: have all players declare their actions simultaneously based on initiative order, then resolve them together. This creates urgency and lets everyone feel engaged at the same time.
+
+---
+
+## Team Battle Flow (4+ Combatants)
+
+When a scene has four or more combatants, the standard turn-by-turn format can slow play significantly. Use the following procedure instead:
+
+1. **GM sets the scene:** Describe where everyone is, what the enemy is doing, what's about to happen.
+2. **All players declare actions simultaneously.** Based on their initiative order, each player describes what they want to do.
+3. **Resolve in order:** The GM works through the initiative order, giving feedback on each player's actions. When one player's action affects another (e.g., covering a teammate), resolve the intersection immediately.
+4. **Free and Swift actions have their own window:** Players can use these during the resolution of others' actions. A Swift action used "after" an already-started Attack action takes effect simultaneously with it — neither can interrupt the other.
+
+> The goal is dramatic, simultaneous action — not a queue of isolated turns. Think of the party as already coordinated, knowing who tanks, who supports, who flanks.

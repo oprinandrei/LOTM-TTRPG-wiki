@@ -10,11 +10,43 @@ sequences:
       - 50-gram Star Crystal
     abilities:
       - name: Divination
-        description: 1 cast action, 2 SP. Roll Occultism vs. difficulty (15–30+) to divine locations, events, people. Crit success reveals time/place/persons; Crit fail attracts unwanted attention. Requires clues for other people.
+        const: 1 casting action, 2 spirituality points. Choose 1 divination method and perform 1 Occult check.
+        description: >
+          You master astrology, card divination, pendulums, spiritual vision, numerology, palmistry, and other divination methods.
+          Difficulty Results:
+          - Difficulty 15: Vague result (e.g., finding an object reveals only the city)
+          - Difficulty 20: General result, usually gives a direction
+          - Difficulty 25: Fairly accurate result (e.g., object finding accurate to a specific street)
+          - Difficulty 30: Very accurate result, reveals specific content
+          Critical Success: Results are extremely accurate—content, time, place, and people all revealed.
+          Critical Failure: You obtain the corresponding content but attract attention from related beings. If divination involved hidden entities, directly or indirectly related Beyonders notice they are being watched. They must make a Spiritual Intuition check; beings higher than 1 level are detected by default regardless of difficulty.
+          Special Rules:
+          - Repeated divination in the same direction before obtaining new clues yields the same result, regardless of difficulty
+          - Divination involving other people fails by default without clues; succeeds by default if you have their blood or belongings
+          - For each clue obtained, gain +2 to divination checks, but divination of targets higher than 1 level fails by default
+          - Under special circumstances, lower-level beings can attempt divination of higher-level targets
+          - When in deep sleep, perform a Difficulty 20 Inspiration check. If successful and something affecting you happened recently, you glimpse a vague picture needing interpretation (dream divination)
+          Divination Methods You Can Choose:
+          - Tarot Divination: Silently focus on your question. The 22 tarot cards reveal your answer in reversed form.
+          - Coin Divination: Toss a coin for a simple yes or no answer.
+          - Astrology: Requires the target's basic information or blood. Use an astrolabe or crystal ball to divine fate, general trajectory, or current location. Information is relatively specific.
+          - Divination Sticks: Requires a stick and the target's personal belongings or blood worn long-term. Drop it to divine direction and position.
+          - Pendulum Divination: Requires a crystal or silver pendulum. Can only divine matters related to yourself or indirect connections. Write (don't ask) your question. The pendulum rotates clockwise or counterclockwise; magnitude indicates specificity.
+          - Dream Divination: Write your divination question on paper. Use meditation to light sleep and directly witness relevant pictures.
       - name: Ritual Mastery
-        description: Grants access to ritual magic as long as Occultism is at least Trained.
+        description: >
+          You gain access to ritual magic and can invoke divine power. As long as you have been trained in Occult (regardless of level), you can perform rituals.
+          For ritual magic available to you, refer to "Common Ritual Magic."
+          (This benefit cannot be stolen or recorded)
       - name: Spiritual Vision
-        description: See auras (health, emotion, spirituality). Costs 1 SP/round. +2 to spiritual intuition checks.
+        cost: 1 free action, 1 spirituality point per round.
+        description: >
+          You have obtained heightened spiritual vision due to your Inspiration. Your vision gains these benefits:
+          - Etheric Body: See target health status through aura color. Identify uncomfortable areas or problems. When focusing on specific organs, see through thin barriers and confirm people inside.
+          - Spiritual Body: Confirm whether an object/creature has spirituality (cannot identify Beyonders directly). Can penetrate doors to see inside and detect ritual magic. Can penetrate spiritual walls.
+          - Mental Body: See emotions as colors, though only generally (e.g., depressed or uneasy emotions appear dark).
+          - Astral Body: You cannot see the astral body.
+          While using Spiritual Vision, gain +2 on Spiritual Intuition checks.
   - number: 8
     name: Clown
     potion: A liquid displaying a mix of gold, yellow, and red, with distinctly separate colors at their boundaries. Bubbles churn and fizz within the liquid. It tastes extremely bitter and horrible.

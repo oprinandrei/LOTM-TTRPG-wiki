@@ -1,0 +1,304 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeader from '../../components/ui/SectionHeader.astro';
+
+export async function getStaticPaths() {
+  const rules = await getCollection('rules');
+  return rules.map((rule) => ({
+    params: { slug: rule.id },
+    props: { rule },
+  }));
+}
+
+const { rule } = Astro.props;
+const { Content } = await render(rule);
+
+const allRules = await getCollection('rules');
+allRules.sort((a, b) => a.data.chapter - b.data.chapter);
+const currentIndex = allRules.findIndex((r) => r.id === rule.id);
+const prev = allRules[currentIndex - 1];
+const next = allRules[currentIndex + 1];
+---
+
+<BaseLayout
+  title={`${rule.data.title} — Rules — Lord of Mysteries TTRPG`}
+  description={rule.data.description}
+>
+  <main class="container">
+    <div class="page-header">
+      <a href="/rules" class="back-link">← Rules</a>
+      <SectionHeader
+        title={rule.data.title}
+        subtitle={`Chapter ${rule.data.chapter}${rule.data.description ? ` · ${rule.data.description}` : ''}`}
+      />
+    </div>
+
+    <article class="rule-content">
+      <Content />
+    </article>
+
+    <nav class="chapter-nav">
+      {prev ? (
+        <a href={`/rules/${prev.id}`} class="nav-link nav-prev">
+          <span class="nav-label">← Previous</span>
+          <span class="nav-title">Ch. {prev.data.chapter} · {prev.data.title}</span>
+        </a>
+      ) : <span />}
+      {next && (
+        <a href={`/rules/${next.id}`} class="nav-link nav-next">
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">Ch. {next.data.chapter} · {next.data.title}</span>
+        </a>
+      )}
+    </nav>
+  </main>
+</BaseLayout>
+
+<style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2.5rem var(--spacing-gutter);
+  }
+
+  .page-header {
+    margin-bottom: 2rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-family: var(--font-label);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    margin-bottom: 1.25rem;
+    transition: color 0.15s ease;
+  }
+
+  .back-link:hover {
+    color: var(--color-primary-light);
+  }
+
+  /* ── Prose styles for MDX content ── */
+  .rule-content {
+    color: var(--color-text-default);
+    line-height: 1.7;
+  }
+
+  .rule-content :global(h2) {
+    font-family: var(--font-headline);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-text-heading);
+    margin: 2.5rem 0 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--color-material-outline);
+  }
+
+  .rule-content :global(h2:first-child) {
+    margin-top: 0;
+  }
+
+  .rule-content :global(h3) {
+    font-family: var(--font-headline);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary-light);
+    margin: 1.75rem 0 0.5rem;
+    letter-spacing: 0.01em;
+  }
+
+  .rule-content :global(h4) {
+    font-family: var(--font-label);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin: 1.25rem 0 0.4rem;
+  }
+
+  .rule-content :global(p) {
+    font-size: 0.9rem;
+    margin: 0 0 0.9rem;
+  }
+
+  .rule-content :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .rule-content :global(strong) {
+    color: var(--color-text-heading);
+    font-weight: 600;
+  }
+
+  .rule-content :global(em) {
+    color: var(--color-text-muted);
+  }
+
+  .rule-content :global(hr) {
+    border: none;
+    border-top: 1px solid var(--color-material-outline);
+    margin: 2rem 0;
+  }
+
+  /* Blockquotes */
+  .rule-content :global(blockquote) {
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+    background-color: var(--color-background-surface);
+    border-left: 3px solid var(--color-primary);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+
+  .rule-content :global(blockquote p) {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--color-text-default);
+  }
+
+  /* Lists */
+  .rule-content :global(ul),
+  .rule-content :global(ol) {
+    padding-left: 1.25rem;
+    margin: 0 0 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .rule-content :global(li) {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-text-default);
+  }
+
+  .rule-content :global(li > ul),
+  .rule-content :global(li > ol) {
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+  }
+
+  /* Tables */
+  .rule-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin: 1rem 0 1.5rem;
+    background-color: var(--color-background-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-material-outline);
+  }
+
+  .rule-content :global(thead) {
+    background-color: var(--color-background-surface);
+  }
+
+  .rule-content :global(th) {
+    font-family: var(--font-label);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    padding: 0.6rem 0.875rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-material-outline);
+  }
+
+  .rule-content :global(td) {
+    padding: 0.55rem 0.875rem;
+    color: var(--color-text-default);
+    border-bottom: 1px solid color-mix(in srgb, var(--color-material-outline) 40%, transparent);
+    vertical-align: top;
+  }
+
+  .rule-content :global(tr:last-child td) {
+    border-bottom: none;
+  }
+
+  .rule-content :global(tr:hover td) {
+    background-color: color-mix(in srgb, var(--color-primary) 6%, transparent);
+  }
+
+  /* Inline code */
+  .rule-content :global(code) {
+    font-family: monospace;
+    font-size: 0.82em;
+    background-color: var(--color-background-surface);
+    border: 1px solid var(--color-material-outline);
+    border-radius: var(--radius-sm);
+    padding: 0.1em 0.35em;
+    color: var(--color-primary-light);
+  }
+
+  /* Code blocks */
+  .rule-content :global(pre) {
+    background-color: var(--color-background-surface);
+    border: 1px solid var(--color-material-outline);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .rule-content :global(pre code) {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 0.8rem;
+    color: var(--color-text-default);
+  }
+
+  /* ── Chapter nav ── */
+  .chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-material-outline);
+  }
+
+  .nav-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    background-color: var(--color-background-card);
+    border: 1px solid var(--color-material-outline);
+    border-radius: var(--radius-lg);
+    max-width: 48%;
+    transition: border-color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    border-color: var(--color-primary-light);
+  }
+
+  .nav-next {
+    margin-left: auto;
+    text-align: right;
+  }
+
+  .nav-label {
+    font-family: var(--font-label);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  .nav-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary-light);
+  }
+</style>

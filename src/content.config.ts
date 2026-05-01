@@ -3,6 +3,7 @@ import { glob } from 'astro/loaders';
 
 const abilitySchema = z.object({
   name: z.string(),
+  cost: z.string().optional(),
   description: z.string(),
 });
 
@@ -73,4 +74,13 @@ const npcs = defineCollection({
   }),
 });
 
-export const collections = { pathways, characters, npcs };
+const rules = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/rules' }),
+  schema: z.object({
+    title: z.string(),
+    chapter: z.number(),
+    description: z.string().optional(),
+  }),
+});
+
+export const collections = { pathways, characters, npcs, rules };

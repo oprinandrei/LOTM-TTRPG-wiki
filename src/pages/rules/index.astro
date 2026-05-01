@@ -1,0 +1,118 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeader from '../../components/ui/SectionHeader.astro';
+
+const rules = await getCollection('rules');
+rules.sort((a, b) => a.data.chapter - b.data.chapter);
+---
+
+<BaseLayout title="Rules — Lord of Mysteries TTRPG">
+  <main class="container">
+    <SectionHeader
+      title="Rules"
+      subtitle="Core mechanics, combat, and Beyonder advancement."
+    />
+
+    <ol class="rules-list">
+      {rules.map((rule) => (
+        <li>
+          <a href={`/rules/${rule.id}`} class="rule-card">
+            <span class="chapter-number">Ch. {rule.data.chapter}</span>
+            <div class="rule-body">
+              <h2 class="rule-title">{rule.data.title}</h2>
+              {rule.data.description && (
+                <p class="rule-desc">{rule.data.description}</p>
+              )}
+            </div>
+            <span class="rule-arrow">→</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </main>
+</BaseLayout>
+
+<style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2.5rem var(--spacing-gutter);
+  }
+
+  .rules-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .rule-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1rem 1.25rem;
+    background-color: var(--color-background-card);
+    border: 1px solid var(--color-material-outline);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .rule-card:hover {
+    border-color: var(--color-primary-light);
+    box-shadow: 0 2px 16px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  }
+
+  .chapter-number {
+    flex-shrink: 0;
+    font-family: var(--font-label);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-primary-light);
+    background-color: var(--color-primary-container);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-full);
+    padding: 3px 10px;
+    white-space: nowrap;
+  }
+
+  .rule-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .rule-title {
+    font-family: var(--font-headline);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-heading);
+    margin: 0 0 0.2rem;
+  }
+
+  .rule-desc {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    line-height: 1.45;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .rule-arrow {
+    flex-shrink: 0;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .rule-card:hover .rule-arrow {
+    color: var(--color-primary-light);
+    transform: translateX(3px);
+  }
+</style>
