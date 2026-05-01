@@ -11,7 +11,7 @@ sequences:
     abilities:
       - name: Divination
         const: 1 casting action, 2 spirituality points. Choose 1 divination method and perform 1 Occult check.
-        description: >
+        description: |
           You master astrology, card divination, pendulums, spiritual vision, numerology, palmistry, and other divination methods.
           Difficulty Results:
           - Difficulty 15: Vague result (e.g., finding an object reveals only the city)
@@ -34,13 +34,13 @@ sequences:
           - Pendulum Divination: Requires a crystal or silver pendulum. Can only divine matters related to yourself or indirect connections. Write (don't ask) your question. The pendulum rotates clockwise or counterclockwise; magnitude indicates specificity.
           - Dream Divination: Write your divination question on paper. Use meditation to light sleep and directly witness relevant pictures.
       - name: Ritual Mastery
-        description: >
+        description: |
           You gain access to ritual magic and can invoke divine power. As long as you have been trained in Occult (regardless of level), you can perform rituals.
           For ritual magic available to you, refer to "Common Ritual Magic."
           (This benefit cannot be stolen or recorded)
       - name: Spiritual Vision
         cost: 1 free action, 1 spirituality point per round.
-        description: >
+        description: |
           You have obtained heightened spiritual vision due to your Inspiration. Your vision gains these benefits:
           - Etheric Body: See target health status through aura color. Identify uncomfortable areas or problems. When focusing on specific organs, see through thin barriers and confirm people inside.
           - Spiritual Body: Confirm whether an object/creature has spirituality (cannot identify Beyonders directly). Can penetrate doors to see inside and detect ritual magic. Can penetrate spiritual walls.
