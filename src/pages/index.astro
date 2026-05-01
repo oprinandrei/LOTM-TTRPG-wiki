@@ -37,8 +37,65 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <div class="nav-card__icon">✦</div>
         <h2>Rules</h2>
         <p>Actions, conditions, and mechanics reference.</p>
-        
       </a>
+    </section>
+
+    <section class="about">
+      <div class="about__header">
+        <span class="about__label">About This World</span>
+        <div class="about__rule"></div>
+      </div>
+
+      <blockquote class="about__epigraph">
+        "A judge from the distant future and the old days of two paths — the Black Emperor —
+        turned everything experienced in past history into concrete values, supported by two pillars.
+        The purpose: to find a better ending by putting the past into numbers."
+      </blockquote>
+
+      <div class="about__grid">
+        <div class="about__entry">
+          <h3>The World of Lord of Mysteries</h3>
+          <p>
+            Picture Victorian England: a world of surface prosperity concealing deep inequality.
+            In this world, <strong>gods truly exist</strong>. There are seven Righteous Gods with
+            established churches across nations. Here is the blasphemous truth: gods are promoted
+            step by step through sequence pathways, just like anyone else. A being who reaches
+            Sequence 0 is considered a true god — which means you, too, could one day ascend to
+            that throne.
+          </p>
+        </div>
+        <div class="about__entry">
+          <h3>The Hidden World</h3>
+          <p>
+            The supernatural is real — but ordinary people don't know it. Through chance and
+            coincidence, some are drawn into the extraordinary. Those who take potions are called
+            <strong>Beyonders</strong>, and they gain powers derived from Beyonder Characteristics —
+            fragments of the world's original creator, dispersed when it fell.
+          </p>
+        </div>
+        <div class="about__entry">
+          <h3>The Heart of This World</h3>
+          <p>
+            Beneath the extraordinary, this is a story about the <strong>tension between humanity
+            and divinity</strong> — the weight of being powerful in a world that grinds ordinary
+            people to dust. God is not omnipotent here. Even as a Beyonder, you've only gained
+            a <em>chance</em> to change things. Whether you do depends entirely on whether you
+            grab hold of it.
+          </p>
+        </div>
+      </div>
+
+      <div class="about__footer">
+        <p>
+          Fan content inspired by a{' '}
+          <a
+            href="https://www.reddit.com/r/LordofTheMysteries/comments/12qzixe/complete_ttrpg_rulebook_for_lotm_corrected/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >community TTRPG rulebook</a>.
+          No affiliation with the original work or its author. Free to use, fork, and adapt.
+        </p>
+      </div>
     </section>
   </main>
 </BaseLayout>
@@ -173,5 +230,101 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     border: 1px solid var(--color-material-outline);
     border-radius: var(--radius-full);
     padding: 2px 8px;
+  }
+
+  /* ── About section ── */
+  .about {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--color-material-outline);
+  }
+
+  .about__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .about__label {
+    font-family: var(--font-label);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-primary-light);
+    white-space: nowrap;
+  }
+
+  .about__rule {
+    flex: 1;
+    height: 1px;
+    background-color: var(--color-material-outline);
+  }
+
+  .about__epigraph {
+    font-family: var(--font-headline);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    border-left: 2px solid var(--color-primary);
+    margin: 0 0 2.5rem;
+    padding: 0.5rem 0 0.5rem 1.25rem;
+    max-width: 680px;
+  }
+
+  .about__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .about__entry h3 {
+    font-family: var(--font-headline);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-heading);
+    margin: 0 0 0.625rem;
+  }
+
+  .about__entry p {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .about__entry strong {
+    color: var(--color-text-default);
+    font-weight: 600;
+  }
+
+  .about__entry em {
+    color: var(--color-primary-light);
+    font-style: italic;
+  }
+
+  .about__footer {
+    border-top: 1px solid var(--color-material-outline);
+    padding-top: 1.25rem;
+  }
+
+  .about__footer p {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .about__footer a {
+    color: var(--color-primary-light);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .about__footer a:hover {
+    color: var(--color-text-heading);
   }
 </style>
