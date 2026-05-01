@@ -1,0 +1,59 @@
+name: Character Name
+pathway: Fool
+sequence: 9
+sequenceName: Seer
+background: "Brief background description."
+
+hp:
+  max: 40
+
+sanity:
+  max: 60
+
+digestion:
+  total: 3      # Total potion slots available at this sequence
+  digested: 0   # Slots already digested
+
+attributes:
+  strength: 10
+  dexterity: 10
+  constitution: 10
+  intelligence: 10
+  wisdom: 10
+  charisma: 10
+
+# attribute: which stat the skill uses | proficient: adds proficiency bonus to rolls
+skills:
+  # Strength
+  athletics:        { attribute: strength,      proficient: false }
+  # Dexterity
+  acrobatics:       { attribute: dexterity,     proficient: false }
+  sleight_of_hand:  { attribute: dexterity,     proficient: false }
+  stealth:          { attribute: dexterity,     proficient: false }
+  # Intelligence
+  arcana:           { attribute: intelligence,  proficient: false }
+  history:          { attribute: intelligence,  proficient: false }
+  investigation:    { attribute: intelligence,  proficient: false }
+  occult:           { attribute: intelligence,  proficient: false }
+  religion:         { attribute: intelligence,  proficient: false }
+  # Wisdom
+  animal_handling:  { attribute: wisdom,        proficient: false }
+  insight:          { attribute: wisdom,        proficient: false }
+  medicine:         { attribute: wisdom,        proficient: false }
+  perception:       { attribute: wisdom,        proficient: false }
+  survival:         { attribute: wisdom,        proficient: false }
+  # Charisma
+  deception:        { attribute: charisma,      proficient: false }
+  intimidation:     { attribute: charisma,      proficient: false }
+  performance:      { attribute: charisma,      proficient: false }
+  persuasion:       { attribute: charisma,      proficient: false }
+
+abilities:
+  - name: Ability Name
+    source: "Sequence Name (Sequence N)"
+    cost: "1 Action"           # optional — omit if passive
+    description: "Ability description."
+
+items:
+  - name: Item Name
+    description: "Item description."
