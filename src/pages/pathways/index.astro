@@ -33,7 +33,7 @@ const tarotImages: Record<string, ImageMetadata> = Object.fromEntries(
         const image = tarotImages[pathway.id];
         const highestSeq = pathway.data.sequences[0];
         return (
-          <a href={`/pathways/${pathway.id}`} class="pathway-card">
+          <a href={`${import.meta.env.BASE_URL}pathways/${pathway.id}`} class="pathway-card">
             {image && (
               <div class="card-image">
                 <Image src={image} alt={pathway.data.name} width={220} height={330} />

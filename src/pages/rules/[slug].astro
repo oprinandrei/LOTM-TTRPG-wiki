@@ -27,7 +27,7 @@ const next = allRules[currentIndex + 1];
 >
   <main class="container">
     <div class="page-header">
-      <a href="/rules" class="back-link">← Rules</a>
+      <a href={`${import.meta.env.BASE_URL}rules`} class="back-link">← Rules</a>
       <SectionHeader
         title={rule.data.title}
         subtitle={`Chapter ${rule.data.chapter}${rule.data.description ? ` · ${rule.data.description}` : ''}`}
@@ -40,13 +40,13 @@ const next = allRules[currentIndex + 1];
 
     <nav class="chapter-nav">
       {prev ? (
-        <a href={`/rules/${prev.id}`} class="nav-link nav-prev">
+        <a href={`${import.meta.env.BASE_URL}rules/${prev.id}`} class="nav-link nav-prev">
           <span class="nav-label">← Previous</span>
           <span class="nav-title">Ch. {prev.data.chapter} · {prev.data.title}</span>
         </a>
       ) : <span />}
       {next && (
-        <a href={`/rules/${next.id}`} class="nav-link nav-next">
+        <a href={`${import.meta.env.BASE_URL}rules/${next.id}`} class="nav-link nav-next">
           <span class="nav-label">Next →</span>
           <span class="nav-title">Ch. {next.data.chapter} · {next.data.title}</span>
         </a>
