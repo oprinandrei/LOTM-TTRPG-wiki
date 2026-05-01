@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 
 const pathways = await getCollection('pathways');
 const characters = await getCollection('characters');
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <BaseLayout title="Lord of Mysteries — TTRPG Reference">
@@ -12,26 +13,26 @@ const characters = await getCollection('characters');
       <h1>The Beyond Awaits</h1>
       <p class="hero-sub">A TTRPG reference for the Lord of Mysteries system. Fast lookup for pathways, characters, and rules — built for the table.</p>
       <div class="hero-actions">
-        <a href={`${import.meta.env.BASE_URL}pathways`} class="btn btn--primary">Browse Pathways</a>
+        <a href={`${base}/pathways`} class="btn btn--primary">Browse Pathways</a>
         {characters.length > 0 && (
-          <a href={`${import.meta.env.BASE_URL}characters`} class="btn btn--secondary">Characters</a>
+          <a href={`${base}/characters`} class="btn btn--secondary">Characters</a>
         )}
       </div>
     </section>
 
     <section class="nav-cards">
-      <a href={`${import.meta.env.BASE_URL}pathways`} class="nav-card">
+      <a href={`${base}/pathways`} class="nav-card">
         <div class="nav-card__icon">⬡</div>
         <h2>Pathways</h2>
         <p>{pathways.length} pathways — sequences, potions, and Beyonder abilities.</p>
       </a>
-      <a href={`${import.meta.env.BASE_URL}characters`} class="nav-card nav-card--dim">
+      <a href={`${base}/characters`} class="nav-card nav-card--dim">
         <div class="nav-card__icon">◈</div>
         <h2>Characters</h2>
         <p>Player character statblocks, HP &amp; Sanity trackers, inventory.</p>
         {characters.length === 0 && <span class="coming-soon">No characters yet</span>}
       </a>
-      <a href={`${import.meta.env.BASE_URL}rules`} class="nav-card nav-card--dim">
+      <a href={`${base}/rules`} class="nav-card nav-card--dim">
         <div class="nav-card__icon">✦</div>
         <h2>Rules</h2>
         <p>Actions, conditions, and mechanics reference.</p>

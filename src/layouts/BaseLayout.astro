@@ -10,6 +10,8 @@ const {
   title = 'Lord of Mysteries — TTRPG',
   description = 'A Lord of Mysteries-inspired TTRPG reference for GM and players.',
 } = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <!doctype html>
@@ -18,7 +20,7 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/webp" href={`${import.meta.env.BASE_URL}favicon.webp`} />
+    <link rel="icon" type="image/webp" href={`${base}/favicon.webp`} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,11 +32,11 @@ const {
   </head>
   <body>
     <nav class="site-nav">
-      <a href={import.meta.env.BASE_URL} class="nav-brand">Lord of Mysteries</a>
+      <a href={`${base}/`} class="nav-brand">Lord of Mysteries</a>
       <div class="nav-links">
-        <a href={`${import.meta.env.BASE_URL}pathways`}>Pathways</a>
-        <a href={`${import.meta.env.BASE_URL}characters`}>Characters</a>
-        <a href={`${import.meta.env.BASE_URL}rules`}>Rules</a>
+        <a href={`${base}/pathways`}>Pathways</a>
+        <a href={`${base}/characters`}>Characters</a>
+        <a href={`${base}/rules`}>Rules</a>
       </div>
     </nav>
 

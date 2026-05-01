@@ -5,6 +5,7 @@ import SectionHeader from '../../components/ui/SectionHeader.astro';
 
 const rules = await getCollection('rules');
 rules.sort((a, b) => a.data.chapter - b.data.chapter);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <BaseLayout title="Rules — Lord of Mysteries TTRPG">
@@ -17,7 +18,7 @@ rules.sort((a, b) => a.data.chapter - b.data.chapter);
     <ol class="rules-list">
       {rules.map((rule) => (
         <li>
-          <a href={`${import.meta.env.BASE_URL}rules/${rule.id}`} class="rule-card">
+          <a href={`${base}/rules/${rule.id}`} class="rule-card">
             <span class="chapter-number">Ch. {rule.data.chapter}</span>
             <div class="rule-body">
               <h2 class="rule-title">{rule.data.title}</h2>

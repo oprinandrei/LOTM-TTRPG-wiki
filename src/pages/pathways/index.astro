@@ -7,6 +7,7 @@ import type { ImageMetadata } from 'astro';
 
 const pathways = await getCollection('pathways');
 pathways.sort((a, b) => a.data.name.localeCompare(b.data.name));
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 // Map tarot card images by pathway slug
 const tarotModules = import.meta.glob<{ default: ImageMetadata }>(
@@ -33,7 +34,7 @@ const tarotImages: Record<string, ImageMetadata> = Object.fromEntries(
         const image = tarotImages[pathway.id];
         const highestSeq = pathway.data.sequences[0];
         return (
-          <a href={`${import.meta.env.BASE_URL}pathways/${pathway.id}`} class="pathway-card">
+          <a href={`${base}/pathways/${pathway.id}`} class="pathway-card">
             {image && (
               <div class="card-image">
                 <Image src={image} alt={pathway.data.name} width={220} height={330} />
