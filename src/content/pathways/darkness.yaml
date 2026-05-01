@@ -4,16 +4,133 @@ description: Has powers related to the night and sleep. They gain strength durin
 sequences:
   - number: 9
     name: Sleepless
+    sequence_description: >
+      Night's favored ones require minimal rest while gaining supernatural awareness in darkness.
+      Even without light, you can see clearly. You need only 3-4 hours of rest daily.
+      The deeper the night, the more energetic you become, with strength, agility, thinking,
+      and inspiration all surpassing ordinary people. You keenly perceive unknown dangers
+      and hidden presences in darkness.
+    attribute_gains: "Strength +1, Constitution +1, Dexterity +1, Inspiration +1. Fighting, shooting, and climbing skills increase by 1 level."
     potion: A black liquid emitting a foul odor.
     ingredients: []
-    abilities: []
-  - number: 9
+    abilities:
+      - name: Enhanced Skill Mastery
+        description: |
+          You excel at fighting, shooting, and climbing, gaining mastery over their subdivision skills.
+          - You can learn these skills through effective training of at least 2 hours per session, increasing the corresponding skill by 1 level.
+          - From trainee to proficient: 2 sessions. To advanced: 3 sessions. To master: 4 sessions.
+          - At Sequence 9, potions can only support advancement to the advanced level.
+          - You can learn once per day.
+      - name: Blessed of the Night
+        description: |
+          The deeper the night, the more energetic you become. Your attributes and inspiration grow increasingly superior to ordinary people.
+          - At Dusk: Attribute and skill identification +1 (favorable).
+          - At Night (fully dark, not late night): All attributes +1, identification +2 (favorable). You only become exhausted due to Beyonder factors.
+          - At Late Night (11 PM–3 AM): All attributes +2, identification +2 (favorable). You only become exhausted due to Beyonder factors.
+          - Fast Dodge: During night/late night, gain complete physical defense against firearms (excluding light and lightning). Gain 1 extra level of dodge.
+          Special: Late night = 11 PM–3 AM. Night = all dark periods except late night. Dusk also refers to indoors with no light during daytime; fully dark indoor spaces count as dusk.
+          Sequence 8 Upgrade: Fast dodge becomes permanent, even if you lose the Blessed of the Night ability.
+      - name: No Sleep
+        description: |
+          You only need 3–4 hours of rest daily to fully restore spirituality and energy.
+          - Though energetic at night, you typically rest during the day.
+          - Sequence 8–6: 3 hours to start, with ±5 minute variance. Each sequence reduces rest time by 1 hour.
+          - Sequence 5: Only half an hour needed, with ±10 minute variance.
+          (This is a potion effect and cannot be recorded or stolen.)
+      - name: Darkvision
+        description: |
+          Even in complete darkness, you can maintain normal vision. This does not allow you to ignore extraordinary abilities that hide through shadows or darkness.
+      - name: Premonition of Danger
+        description: |
+          You keenly perceive unknown dangers and hidden presences in dark or shadowed areas.
+          Whenever you are about to suffer a surprise or sneak attack from within darkness/shadow:
+          - Immediately perceive the source, location, and form of the danger mentally. You cannot be surprised or ambushed by things in dark/shadow and enjoy all surprise benefits when aware at night.
+          - If at night/late night and an attack would deal half or more of your maximum HP (rounded up), perform a Difficulty 15 Inspiration check. On success, gain +4 temporary bonus to physical defense, and gain complete physical defense against light/lightning modifications.
+          - If the danger range is large (e.g., area explosion), you are alerted but gain no defensive benefits.
+          Sequence 8 Upgrade: The thought no longer flashes mentally; instead, a corresponding mental image flashes.
+          Sequence 7 Upgrade: Your Inspiration identification succeeds automatically.
+          Sequence 6 Upgrade: You can perceive danger from creatures higher than you.
+      - name: Spirit Vision
+        cost: 1 free action, 1 spirituality point per round.
+        description: |
+          You gain spirit vision, though not as effective for you as your own Inspiration.
+          - Etheric Body: Roughly determine whether someone's body is good or bad through aura color, but no detailed information.
+          - Spiritual Body: Confirm whether an object/creature has spirituality. Cannot identify Beyonders.
+          - Mental Body: See whether someone is thinking, but no further details.
+          - Astral Body: You cannot see astral bodies.
+          - Spiritual Intuition: +1 (favorable) on Inspiration checks while in spirit vision state.
+          (Cannot be recorded or stolen.)
+          Sequence 6 Upgrade: Observing the etheric body directly reveals spiritual organisms and physical condition of different body parts. Mental body can distinguish paths of different spiritual materials and perceive general emotions of targets.
+  - number: 8
     name: Midnight Poet
+    sequence_description: >
+      Master of verse who uses different poetic forms to affect surrounding creatures, balanced
+      between combat and mystical influence. Skilled at fighting, shooting, climbing, and sensing.
+      High Inspiration. Uses different poetic styles to produce various effects on surrounding creatures.
+    attribute_gains: "Strength +1, Constitution +1, Dexterity +1, Inspiration +2. Fighting, shooting, and climbing skills increase by 1 level. Skill growth from Sequence 9 can now reach the scholar level."
     potion: Lakewater-like liquid bathed in cold light, containing a faintly murmuring vortex within.
     ingredients: []
-    abilities: []
+    abilities:
+      - name: Recite Poems
+        cost: 1 spell-casting action, 3 spirituality points. Choose 1 poetry form and perform the corresponding chant.
+        description: |
+          You are skilled at using different poetic forms to affect surrounding creatures.
+          All verses primarily affect the direction you face, striking all creatures who hear them. Creatures not directly facing you are affected within acceptable limits.
+          - Slack Psalm: All affected creatures must resist a Difficulty 15 Will check or suffer disadvantage -2 to skill and attribute tests and swift action limits until the end of your next round.
+          - Midnight Psalm: All affected creatures fall into a stupor state for 1 round. They can perform a Difficulty 15 Will check each turn to escape the stupor. Effect lasts until end of your next round.
+            Stupor State: Regarded as bondage. Can only perform free actions. Gain disadvantage. Other creatures gain advantage. Damage or mental influence immediately lifts the state. Ordinary creatures fall asleep directly.
+          - Requiem Psalm: All affected creatures make a Difficulty 10 Will check or lose 1 attack/casting/movement action until end of your next round (non-stacking). Ordinary undead lose attack desire without a check.
+            Special: Requiem removes fear, anger, charm, and temporary madness, but not other madness or shock.
+          - Intoxicated Poetry: All affected creatures see dreams. They resist with a Difficulty 15 Will check or all movement within 1 round goes to random directions (indistinguishable from reality). Perform a Difficulty 15 Lucky check to confirm desired direction; critical failure leads to dangerous areas.
+          - Praise Psalm: All affected creatures feel sacred reverence. Once per 24 hours, ordinary creatures hearing it recover 1 sanity.
+            Special: Immortal, fallen, dark, or polluted creatures or those in extraordinary madness must make a Difficulty 20 Will check. Failure causes 0/1 sanity loss and obvious discomfort. Extraordinary mad/out-of-control creatures must attack the caster immediately or prioritize attacks within 1 round; others show mild hostility.
+          Sequence 7 Upgrade: Nightmare ability added (see Sequence 7).
   - number: 7
     name: Nightmare
+    sequence_description: >
+      Master of dreams capable of forcibly pulling others into nightmare realms and navigating
+      city-wide collective dreams. Can forcibly pull others into dreams and freely enter/exit
+      sleeping creatures' dreams across huge distances. Direct dragging has limited range,
+      often requiring proximity, but within 100 meters you can attempt the ability.
+    attribute_gains: "Strength +1, Constitution +1, Dexterity +1, Inspiration +2. Fighting, shooting, and climbing skills increase by 1 level. Skill growth can now reach master level."
     potion: Illusory liquid filled with countless phantasms, as if materialized from dreams.
     ingredients: []
-    abilities: []
+    abilities:
+      - name: Forcibly Pull into Dreams
+        cost: 1 casting action, 3 spirituality points. Select up to 10 targets within 100 meters in your line of sight.
+        description: |
+          You can force others into dreams. No check required. Undead creatures are also affected and immediately begin dreaming.
+          Dream Content: You freely weave dream content, but cannot spy on the dreamed person's mind directly. To obtain information, guide them through the dream experience.
+          Conversation: Dream conversations are similar to reality. In confusion states, the dreamed person rarely lies unless deep conscious content causes resistance.
+          Out-of-Sight Targets: To drag non-visible targets, use a full-round action. Range cannot exceed 100 meters. This is gradual, like putting a child to sleep, not instantaneous.
+          Memory Manipulation: You can typically make the dreamer vaguely remember dreaming without specific content. Participating too deeply may grant the dreamer a Difficulty 25 Inspiration check to recall clues.
+          Dreaming is bondage. Externally manifests like sleepwalking.
+          Waking from Dreams:
+          - If the dreamed person realizes it's a dream, they can perform a Difficulty 15 Will check each round to wake.
+          - Beyonders with Beyonder dream-field abilities stay awake by default and exit without action.
+          - Any damage or mental impact ends the dream immediately.
+          - If unaware, the GM can let the dreamer realize with a Difficulty 15 Inspiration check when inconsistencies appear.
+          Maintaining Dream State:
+          - Cannot perform free/attack/casting/movement/full-round actions while maintaining—even speaking requires exiting the dream.
+          - Can faintly hear voices in reality. Can exit the dream without an action at any time.
+          - Considered bound while maintaining. Can recognize attacks and exit to prevent problems.
+          Sequence 6 Upgrades: Dragging range increases to 130 meters; up to 13 targets. While maintaining dreams, perform 1 free action per round.
+          Sequence 5 Upgrades: Dragging range increases to 180 meters; up to 20 targets.
+      - name: Nightmare Transformation
+        cost: 1 full-round action, no spirituality cost. You must fall asleep in reality.
+        description: |
+          You can transform your mind into a "nightmare" state and travel through a city's collective dream. Your spirit body enters the dream world.
+          Dream World: A reality-like world shrouded in mist. Your reachable range is a city composed of the collective cognition of countless dreamers.
+          - Dream Perception: Use dream perception to see light clusters showing dreamer locations in the real world.
+          - Spirit Body Movement: Initially separated from your body, you can reach your dream's boundary, fly into the air, leave your dream, and enter other light clusters to access their dreams.
+          - You don't know dream contents before entering. To leave, actively cross the dream border.
+          Other Applications: You can traverse the dream world of an entire city from home. Extraordinary abilities work normally in the dream world but have no actual impact. You cannot force people who have not entered dreams to enter.
+          Dream Resources: Your HP equals your spirituality. Agility +2. You can fly. Your spirit body may be overwhelmed by superior power.
+      - name: Dream Perception
+        cost: 1 swift action to open the dream perception field.
+        description: |
+          You can see clusters of illusory oval light balls representing dream sources. Each light ball represents a dream.
+          - Visibility Through Barriers: Balls seen through perception are visible despite barriers, allowing you to detect sleeping and non-sleeping creatures. Useful for detecting creature presence in locations.
+          - Dream Access: Perceived dreams let you enter via Invasion Dreams and use nightmare guidance ability. Destroying things in dreams prevents the owner from manifesting them in that dream.
+          - Range: Same as dragging range.
+          Sequence 6 Upgrade: Range extends to 130 meters.

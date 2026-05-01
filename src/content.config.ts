@@ -10,6 +10,8 @@ const abilitySchema = z.object({
 const sequenceSchema = z.object({
   number: z.number(),
   name: z.string(),
+  sequence_description: z.string().optional(),
+  attribute_gains: z.string().optional(),
   potion: z.string().optional(),
   ingredients: z.array(z.string()).optional(),
   abilities: z.array(abilitySchema).optional(),

@@ -4,11 +4,23 @@ description: Specialize in divination, illusions, changing appearances, and cont
 sequences:
   - number: 9
     name: Seer
+    sequence_description: >
+      Diviner and fortune teller, skilled in mystical guidance and divination methods.
+      Help others interpret revelations and guide them toward better futures, but maintain
+      reverence for fate. Avoid arrogance or blind faith in your interpretations.
+      Divination is not a panacea—do not rely on it entirely.
+    attribute_gains: "Inspiration +2. You gain qualification and ability to learn mystical knowledge."
     potion: A dark-blue gelatinous liquid. The smell of the potion is faint and seemingly ethereal. A cool and smooth feeling on their oral cavity upon drinking it.
     ingredients:
       - 10 milliliters Lavos Squid's Blood
       - 50-gram Star Crystal
     abilities:
+      - name: Occult Mastery
+        description: |
+          Every time you receive effective, authentic, non-repetitive occult guidance lasting at least 2 hours, your Occult skill increases by 1 level. You need 2, 3, and 4 learning sessions to reach Proficiency, Advanced, and Master levels respectively.
+          - Learning is limited to 1 session per day for knowledge digestion
+          - If you master all divination skills, this counts as 1 learning session and does not consume your daily limit
+          - Special: If you obtain a book of esoteric knowledge written by a Beyonder whose Occult has reached Master, you can extend your learning to their level. Erudite and Master require 5 and 6 additional sessions respectively
       - name: Divination
         const: 1 casting action, 2 spirituality points. Choose 1 divination method and perform 1 Occult check.
         description: |
@@ -49,35 +61,150 @@ sequences:
           While using Spiritual Vision, gain +2 on Spiritual Intuition checks.
   - number: 8
     name: Clown
+    sequence_description: >
+      Acrobatic fighter with superior physical coordination, extraordinary agility, and intuitive
+      danger sense. Can use paper as weapons and expertly read facial expressions and body language.
+      Slightly predict fate but feel helpless about it. Cover sadness, pain, confusion, and
+      frustration with a smiling face.
+    attribute_gains: "Strength +1, Constitution +2, Dexterity +2, Inspiration +1. Performance and Deception skills increase by 1 level. You never lose balance—if you fall, one limb lands firmly."
     potion: A liquid displaying a mix of gold, yellow, and red, with distinctly separate colors at their boundaries. Bubbles churn and fizz within the liquid. It tastes extremely bitter and horrible.
     ingredients:
       - 1 crystal of a matured Hornacis Gray Mountain Goat Horn
       - 1 Human-Faced Rose Complete Stalk
     abilities:
-      - name: Danger Premonition
-        description: "Triggers on ambush or when single damage exceeds ½ max HP. DC 15 Inspiration: learn danger form; +4 Physical Defense temporarily. [Seq 7] Danger appears as images, not thoughts. [Seq 6] Auto-success on Inspiration check. [Seq 5] Can foresee danger from targets 1 level above you."
-      - name: Paper Blades
-        description: "1 attack action. Throw paper/tarot cards as 1d4 + ½ STR damage die (physical). Chain up to 3 cards per action; each extra card is –2 to hit."
+      - name: Premonition of Danger
+        description: |
+          Also known as intuitive premonition. You can predict others' actions at critical moments and perceive danger.
+          Triggers:
+          - When raided, sneak attacked, or when enemies about to attack you
+          - When a single damage instance exceeds half your maximum HP (rounded up)
+          Resolution:
+          Perform a Difficulty 15 Inspiration check. If successful, an idea flashes in your mind immediately, revealing the danger's form. After success, you cannot be raided or ambushed, but threats you mistakenly judge as "safe" do not trigger this ability.
+          Under the above conditions, as long as unrestrained and unaffected, your physical defense gains +4 temporary bonus. Against gunfire, light, and lightning, retain agility and dodge instead of gaining +4.
+          If the danger range is large (e.g., instantaneous gas explosion across the entire area), even if alarmed, you gain no benefit.
+          Special Rules:
+          - Dangers higher than 1 level cannot be foreseen
+          - Hazards dependent on luck are foreseeable but grant no benefit
+          - Danger premonition is spiritual intuition, so it is negated by anti-divination and anti-prophecy
+          Sequence-Specific Upgrades:
+          - Sequence 7: The flashing thought becomes a flashing image, directly revealing danger manifestation
+          - Sequence 6: Inspiration check succeeds by default
+          - Sequence 5: You can foresee danger from beings higher than 1 level
+      - name: Turn Paper Into Flying Knives
+        cost: 1 attack action
+        description: |
+          Soft paper in your hand becomes flying knives and blades that launch with magic.
+          Paper and tarot cards transform into flying blades and launch, dealing 1d4 + half Strength (rounded up) physical damage against physical defense.
+          - Consecutive hits: You can shoot 3 cards in one attack action. Starting from the second card, take -2 penalty; third card takes -4 penalty, and so on
+          - This damage ignores agility and dodge in physical defense
       - name: Muscle Mastery
-        description: +2 to all muscle-related checks (fighting, throwing, shooting, performance, stealth). Silent movement by default. Fast Dodge (retain full Physical Defense vs. firearms).
+        cost: 1 quick action
+        description: |
+          Your precise muscle control grants you advantages in learning and combat.
+          Performance/Climbing/Jumping checks succeed by default. Contested checks gain +4 bonus.
+          Your muscle-related checks gain +2 (Fighting, Throwing, Shooting, Performance, Deception, Stealth, etc.). Your stealth makes no sound. When others listen for stealth, non-Beyonder listeners fail by default.
+          You gain Fast Dodge, maintain full physical defense against firearms (excluding light and lightning), and gain an extra level of dodge.
+          Extraordinary Audience Path members cannot read your thoughts through body language by default.
+          You learn muscle-related skills faster. Once per 24 hours, if receiving 2+ hours of effective, authentic, non-repetitive training, your related skills increase by 1 level. From Training to Proficiency, Proficiency to Advanced, and Advanced to Master requires 2, 3, and 4 sessions respectively. Maximum: Master.
+          (This is a potion benefit that cannot be recorded or stolen)
   - number: 7
     name: Magician
+    sequence_description: >
+      Fast-casting spellcaster needing no chanting or spirituality infusion. A simple action
+      casts spells and spell-like abilities: damage transfer, flame jump, air bomb, paper doll
+      substitute, flame manipulation, hallucinations, false underwater breathing, bone softening,
+      paper-to-soldiers. Performs actively but never unprepared. Challenges the impossible.
+      Seeks audience applause and controls target attention, even if results are false.
+    attribute_gains: "Inspiration +1, Dexterity +2. Skillful Hands skill increases by 1 level. Performance skill increases by 1 level for each well-prepared magician performance completed."
     potion: A unique liquid resembling a constant display of fireworks, with colors of red, orange, yellow, green, and others continuously scattering, disappearing, and reappearing. It feels ice-cold. When drinking it, at every moment, it would feel like countless bubbles were bursting.
     ingredients:
       - 1 True Root of a Mist Treant
       - All the spinal fluid of a Dark Patterned Black Panther
     abilities:
       - name: Injury Transfer
-        description: 1 cast action, 2 SP. Touch a living creature — transfer wounds from vital areas to less critical body parts. Turns potentially lethal hits into minor ones.
+        cost: 1 casting action, 2 spirituality points. Choose 1 living creature whose wound you touch.
+        description: |
+          If the creature suffers a vital strike effect, transfer the vital strike effect to another limb (e.g., head to arm). The shock and extra damage transfer as well.
+          The transferred limb now suffers the vital strike effect, and any additional damage goes to the new location.
+          If the creature is dying, transfer fatal injuries to non-fatal parts. Make multiple transfers to end the dying state.
+          To transfer a wound from one location on the enemy to their head, roll against physical defense. Success transfers the wound and applies corresponding additional damage, but typically only exposes skin and bone unless the transfer is fatal.
+          A creature's wounds transfer only onto themselves—you cannot transfer wounds between different people.
       - name: Flame Jump
-        description: "Swift action. Teleport short distances through flames or SP expenditure. Leaves no trace. [Seq 3] Up to 5 km range."
+        cost: 1 swift action, 1 per round, 3 spirituality points. Choose a flame or fire you know the location of, within 30 meters.
+        description: |
+          If an ignited flame exists within 30 meters, your body becomes covered in flames, and the selected flame rises to human size, allowing you to jump out.
+          If only fire (matches, combustibles) exists within 30 meters, ignite it first before using this ability.
+          This ability can dodge damage with same priority as a free action, excluding bullets, light, lightning, or similar high-speed damage. You cannot dodge quickly during the jump itself, but can cooperate with a paper doll double to complete it. Against area damage, as long as you jump out of range, the double ensures you take no damage; if you don't escape the area, the double takes half damage.
+          You can jump through poisonous and black flames without harm—only at the moment of jumping.
+          Special: While holding this ability, sense all ignited flames within 30 meters around you
+          Sequence Upgrades:
+          - Sequence 6: Range increases to 40 meters
+          - Sequence 5: Range increases to 60 meters
       - name: Create Illusions
         description: Craft convincing visual hallucinations.
       - name: Paper Doll Substitute
-        description: Place a paper doll as a substitute — absorbs an incoming attack or effect in your place.
+        cost: 1 free action, 5 spirituality points, 1 paper figurine
+        description: |
+          Briefly turn a carried paper doll into yourself and swap positions.
+          Choose one of the following effects:
+          Before being attacked, take the initiative to replace yourself with a paper doll, resisting an attack or other effect, completely nullifying it. You reappear up to 8 meters away (incidental displacement).
+          - Special: For area attacks, if the double's displacement doesn't escape the area, you take half damage (rounded up)
+          - The substitute must be used immediately as an active ability; you must recognize the threat
+          - Effects already applied cannot be substituted (e.g., once poison takes effect, deterioration cannot be substituted)
+          - Note: Free actions higher than 2 levels are too fast for substitution
+          Destroy a paper figurine with flames. Choose 1 mystical information about you (e.g., your plan to attack someone). Perform anti-divination: Mysticism check at anti-divination difficulty. On success, this information is excluded from related divinations, spiritual intuition, and prophecies unless they exceed the difficulty.
+          Turn a paper figurine into an exact copy of yourself. To others, it is another you—like an unchanging wax figure. Hallucinations can bring it to life. This lasts up to half an hour, can fake aura color and limb movement, but cannot communicate.
+          - Special: When the figurine becomes a dummy, your body becomes invisible but cannot leave the dummy beyond 8 meters
       - name: Manipulate Flames
-        description: Control existing fire, shape it, redirect it.
+        cost: 1 spell-casting action, 1 spirituality point. Snap your fingers or simulate the sound.
+        description: |
+          Control flames within 30 meters with a simple action.
+          Usage Options (choose 1 per action):
+          Choose one or more fire seeds. When creatures reach the seed locations, you can shoot up fire pillars causing 2d6 fire damage (Mysticism vs. physical defense, ignoring agility and dodge). Each finger snap triggers 1 spark, up to 3 without penalty. Repeated bursts consume spirituality.
+          Choose an entire box of matches (at least 20 remaining). The box creates a small explosion dealing 6d6 fire damage at once. Cannot trigger other uses.
+          Add 1d6 fire damage to "Turn Paper into Soldiers" weapons. Consume 1 spirituality per round.
+          Control fireballs and enemy flames—delay explosions or slow speeds, applying -4 to the corresponding check.
+          Special: The Magician can only control fire momentarily, not shape it long-term or create fire walls. After potion digestion or promotion, you can summon flames from nothing momentarily, but they cannot sustain unless there's a combustible nearby.
+          Sequence Upgrades:
+          - Sequence 6: Range increases to 40 meters
+          - Sequence 5: Range increases to 60 meters
       - name: Air Bomb
-        description: Compressed air attack.
+        cost: 1 casting action, 1 spirituality point. Select 1 or more targets in line of sight.
+        description: |
+          Create air bombs by snapping your fingers or simulating sounds.
+          Inspiration + Shooting check against physical defense, ignoring agility and dodge. On success, deal 1d8 physical damage (comparable to a custom revolver).
+          Fire up to 3 times in a single casting action: second shot takes -2 penalty, third takes -4 penalty.
+          Sequence Upgrades:
+          - Sequence 6: Damage increases to 2d6 (comparable to the latest rifle)
+          - Sequence 5: Damage increases to 3d6 (comparable to steam rifle bullets)
       - name: Bone Softening
-        description: Temporarily softens a target's bones on touch.
+        cost: 1 casting action
+        description: |
+          Soften your bones to break free from restraints.
+          When falling into grapple or restrained by handcuffs, ropes, etc., soften your bones to break free immediately. Does not include oversized bondage from Beyonders.
+          When realizing you're about to suffer a vital strike, even in physical restraint, soften your bones, bend your waist backward, and dodge the vital strike.
+          - Roll 1d6 for avoided vital parts: 1-5 = other vital points, 6 = vital point not hit
+      - name: Hallucinations (Illusions)
+        cost: 1 casting action, 2 spirituality points. Affect an 8-meter radius around you.
+        description: |
+          Create near-real illusions in your surroundings with colors, sounds, and smells.
+          The hallucination content is completely customizable, with color, sound, and smell simultaneously—extremely realistic.
+          Any creature witnessing the illusion must actively recognize it may be false and try to identify it before reacting.
+          Contested against Deception vs. Detection/Inspiration. Because this ability usually only works once per target (causing ongoing doubt), it is typically used only once per person.
+          Special: Beings higher than 1 level perceive hallucinations as false by default.
+      - name: False "Underwater Breathing"
+        cost: 1 casting action, 1 spirituality point. Create an invisible air tube up to 5 meters long.
+        description: |
+          Create an invisible, thin tube of air.
+          Breathe through its mouth, exhale through its nose. Ensures "underwater breathing" in water less than 5 meters deep or avoids toxins/harmful gases in contaminated environments up to 5 meters above, as long as the toxin range does not exceed this length.
+      - name: Turn Paper Into Soldiers
+        cost: 1 casting action, 1 spirituality point. Prepare paper of appropriate shape, then "shake" it to sharpen and transform into a weapon.
+        description: |
+          The manufactured weapon equals weapons in "Weapon Paradigm" (cold weapons only, not complex hot weapons). Effects last 5 minutes and can be used by others.
+          Despite sharpening, paper weapons retain paper characteristics. Paper weapons take damage after 3 hits against hard objects like armor.
+          Different weapons require different paper shapes (e.g., whips need long strips; sticks need rolled paper). Cut or shape in advance as needed.
+      - name: Quick-Casting Technique
+        description: |
+          Cast spells or spell-like abilities as a single action.
+          Once per round, as a free action, use any one of these spellcasting abilities: Manipulate Flames, Air Bomb, Turn Paper into Soldiers, False "Underwater Breathing," Bone Softening, or Injury Transfer.
+          (This is a potion benefit that cannot be stolen or recorded)

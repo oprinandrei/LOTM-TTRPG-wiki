@@ -4,16 +4,142 @@ description: Powers related to the dead and spirits.
 sequences:
   - number: 9
     name: Corpse Collector
+    sequence_description: >
+      Possessing certain corpse characteristics, your entire person looks quite gloomy with low body
+      temperature, causing ordinary undead to mistake you for one of their own. Your spirit vision
+      directly sees evil spirits and you understand undead traits and weaknesses through your
+      knowledge of the dead.
+    attribute_gains: "Strength +1, Constitution +1, Agility +1, Inspiration +1. You gain the new skill Knowledge of the Dead."
     potion: Blackish corpse fluid reeking of decay.
     ingredients: []
-    abilities: []
+    abilities:
+      - name: Corpse Characteristics
+        description: |
+          You gain certain corpse-like traits that affect your appearance and interactions with undead.
+          - Gain 5 resistance to cold, poison, and curse. Mistaken for the same kind by ordinary undead (ghosts/zombies, etc.); does not include undead with outstanding intelligence or undead transformed by Beyonders.
+          - Appearance changes: quite gloomy with lower body temperature, whiter skin, and certain corpse characteristics.
+          - Every 2-hour corpse/undead autopsy (type cannot repeat) increases Knowledge of the Dead by 1 level; each corpse/undead type can upgrade once. From Training to Proficiency, Proficiency to Advanced, and Advanced to Master requires 2, 3, and 4 sessions respectively. Can only upgrade to Master temporarily.
+      - name: Knowledge of the Dead
+        description: |
+          You know the traits and weaknesses of many undead creatures. Knowledge of the Dead replaces Biology for corpse identification and is regarded as a Biology subdivision skill.
+          Using Knowledge of the Dead on a corpse quickly reveals approximate cause of death, death weapon, death time, and whether death involves extraordinary things.
+          Autopsy Difficulty Results:
+          - Difficulty 15: Know general death cause, death weapon, death time, whether extraordinary factors were involved. (Quick autopsy maximum.)
+          - Difficulty 20: Know exact death cause, specific weapon type, specific death time, extraordinary power type involved (sacred, dark, fallen, undead, flame).
+          - Difficulty 25: Reverse-engineered treatment the corpse suffered before death; whether disguised as suicide; post-death torture or fighting.
+          - Difficulty 30: Confirmed general corpse living conditions, whether long-term drug use, whether the person underwent training.
+          - Great Success: Approximately restore the corpse death scene; substitute the deceased's perspective in your mind.
+          - Critical Failure: Autopsy went terribly wrong; some corpse clues are permanently lost from mishandling.
+          Corpse Condition Penalties:
+          - Dead 1+ weeks or beyond recognition: -2 (unfavorable) to autopsy.
+          - Dead 1+ months or internal organs completely destroyed: -4 (unfavorable) to autopsy.
+          - Dead 6+ months or half limbs missing: -6 (unfavorable) to autopsy.
+          - Dead several+ years or only skin/bones left: -8 (unfavorable) to autopsy; highest difficulty only Difficulty 20.
+          Attack Application: Making attack rolls against undead creatures can incorporate Knowledge of the Dead as an additional attack roll bonus. Must dissect undead first to gain this bonus against that type.
+      - name: Vision
+        cost: 1 free action, 1 spirituality point per round.
+        description: |
+          You gain spirit vision, though not as effective for you as your own Inspiration.
+          - Etheric Body: See target health through aura color; find body discomfort/problems; and see the soul of the dead directly.
+          - Spiritual Body: Confirm if an object/creature has spirituality (cannot identify Beyonders).
+          - Mental Body: See if someone is thinking (cannot get more detailed information).
+          - Astral Body: You cannot see astral bodies.
+          - Spiritual Intuition: +1 (favorable) when in spiritual vision state.
+          (As a basic Beyonder ability, cannot be recorded or stolen.)
+      - name: Natural Spirit Vision
+        description: |
+          You naturally have spirit vision, directly seeing evil spirits without activation.
+          - No need to turn on Spirit Vision; use normal vision to find spirit creatures (does not include wraith advanced invisibility or information creatures).
+          - Using 1 round of vision to confirm a deceased body provides +2 to autopsy identification.
+          Sequence 8 Upgrade: Can discover wraiths in advanced invisibility and other hard-to-find spirit creatures.
   - number: 8
     name: Gravedigger
+    sequence_description: >
+      Stronger body, stronger spirit vision, and more agile skills, with the ability to initially
+      communicate with small nearby spirits. Eyes of Death allow you to seemingly enter the spirit
+      world and the dead kingdom, overlooking enemies at higher levels to find important nodes.
+      When facing unfamiliar undead or spirit creatures, you can quickly find their weaknesses
+      through careful observation.
+    attribute_gains: "Strength +1, Constitution +2, Agility +1, Inspiration +1. Knowledge of the Dead advances to Erudition. Fighting, Shooting, and Throwing (including subdivisions) are added to your quick learning scope."
     potion: Dark green liquid streaked with blood.
     ingredients: []
-    abilities: []
+    abilities:
+      - name: Eyes of Death
+        cost: 1 full-round action, 5 spirituality points. Choose 1 undead creature.
+        description: |
+          You seemingly enter the spirit world and dead kingdom, overlooking enemies to find important nodes and weaknesses.
+          If completed without interruption, you benefit from a great success on all attacks against this undead creature.
+          Great Success: Damage guaranteed to cause more than half maximum theoretical damage (rounded up). If rolled damage is lower than half maximum theoretical, it is automatically changed to half damage.
+          Once Eyes of Death scrutiny completes, attacks against the chosen creature gain the Knowledge of the Dead bonus regardless of prior familiarity.
+          Out-of-control creatures (regarded as undead in essence) and products of death-like processes (such as secret puppets) are also examinable.
+          Special: Enjoying great success benefits from Eyes of Death does not guarantee a hit; you still need a successful attack identification, and only hitting the target enjoys the guaranteed damage.
+      - name: Communicating with the Dead
+        cost: 1 spellcasting action, 3 spirituality points.
+        description: |
+          You can begin communicating with a handful of nearby spirits and asking for their help.
+          Summon a spirit body to perform 1 action instead of you.
+          Available spirits:
+          - Shadow: 15 HP, 15 Physical Defense (Agility/Dodge 5), 10 Will Defense, 5 cold resistance. Attack causes 1d6 cold damage. No other abilities but can perform special actions like grapple.
+          For easy calculation, Shadow's skill/ability bonuses depend on your Inspiration or +5 check value processing.
+          Each spellcasting action summons a spirit body. This ability cannot summon advanced spirits; only temporarily issue preliminary instructions to surrounding spirits. After each spirit performs its action, it disappears.
+          Special: Continuous actions like grapple continue until the target breaks free. You and the spirit have no deeper communication or sensory sharing.
+      - name: Quick Dodge
+        description: |
+          You can dodge firearms with superior reflexes.
+          - Facing guns, fully retain Agility and dodge in physical defense (does not include light/lightning).
+          - Facing attacks slower than guns, dodge more quickly; gain an extra level of dodge.
+          (This is a potion effect and cannot be recorded or stolen.)
   - number: 7
     name: Spirit Medium
+    sequence_description: >
+      Master all mystical rituals related to spirits; directly communicate with natural spirits
+      and wandering dead souls in the real world; use different spirits to realize various magical
+      phenomena quite comprehensively. Spiritualism can also be used on living creatures,
+      though not without danger.
+    attribute_gains: "Strength +1, Constitution +1, Agility +1, Inspiration +2. Occultism increases by 1 level."
     potion: Transparent liquid with psychedelic hues.
     ingredients: []
-    abilities: []
+    abilities:
+      - name: Communicating with the Dead
+        cost: 1 spellcasting action, 3 spirituality points.
+        description: |
+          You can directly communicate with natural spirits and wandering spirits in the real world.
+          - Dead persons who appeared in an area can be communicated with directly, as long as their spirit hasn't been destroyed.
+          - Communicate with undead using social skills like words, persuasion, pleasing, or intimidation as usual.
+          - Natural spirits existing naturally in the spirit world can also be communicated with to learn local clues. Generally find 5d6+ natural spirits/undead in a 100-meter area.
+          - Undead creatures you can communicate with do not include living corpses, water ghosts, or skeletons that usually lack real spirit bodies.
+          Establishing psychic relationship: Requires Inspiration + Knowledge of the Dead vs. Will Defense check; success establishes connection.
+          Psychic with Living People:
+          - Involuntary Target: 1 spellcasting action, no spirituality. Choose 1 helpless target. Everyone hears the response. Achieving helplessness through violence causes the channeled target 1/1d2 Sanity loss.
+          - Voluntary Target: About 1 minute using essential oils dripped into a candle flame, making the target gradually fall into a confusion state before starting psychic.
+          Warning: Psychic of insanity targets causes Sanity loss matching their insanity source; possibly causing taint spreading.
+      - name: Spiritualism
+        description: |
+          Use different spirits to achieve various magical effects.
+          Danger Premonition (Passive): As long as a spirit body is in the current area, whenever you are about to encounter a surprise attack or sneak attack, local spirit bodies or the spirit world provide immediate warning with specific details about the next attack's form. Generally ignores distance but information from 1+ city away only arrives by noon or morning.
+          Regional Psychic (1 spellcasting action, 3 spirituality points): Directly obtain information spirits within a certain range know. Uses Inspiration (not Education) for dead knowledge identification.
+          - Difficulty 15: Know area type, general surrounding environment, existing things.
+          - Difficulty 20: Know local customs, landforms, local people's clothing and appearance.
+          - Difficulty 25: Know more detailed information, recent happenings, detailed thing types.
+          - Difficulty 30: Know more detailed local information and relevant direct information like deceased location.
+          - Great Success: Know almost everything about the place including danger degree/size.
+          - Critical Failure: Spirits gave wrong information possibly from events disguised or their misjudgment.
+          Spiritual Body Assistance (1 spellcasting action, 3 spirituality points, lasts 5 minutes): Summons 1 spirit body to possess you.
+          - Choose a skill level and use that skill as Master even if untrained.
+          - With spirit help, reproduce certain information/portraits seen, writing or painting extremely fast.
+          Drive the Dead (1 spellcasting action, 3 spirituality points): Communicate and drive natural spirits, undead, and spirit creatures.
+          - As long as a spirit body is willing, regard it as a member you can drive.
+          - Driven undead lose movement ability after 72 hours unless effectively replenished; cannot battle after 24 hours; completely dissipate afterward.
+          - Replenish undead by allowing attachment to a creature and extracting spirituality and body temperature; every spirituality point extracted increases undead duration by 1 minute.
+          Available Spirit Types:
+          Shadow: 15 HP, 15 physical defense (Agility/Dodge 5), 10 Will defense, 5 cold/curse resistance. Ignores poison/physical damage. Attack causes 1d6 cold damage.
+          Wraith/Evil Spirit: 30 HP, 20 physical defense (Agility/Dodge 10), 10 Will defense, 10 cold resistance, 5 curse resistance. Ignores poison/physical damage. Attack causes 2d6 cold damage. Possesses Wraith Possession ability.
+          Living Corpse: 15 HP, 15 physical defense (Agility/Dodge 5). 5 cold/curse/poison resistance. Attack causes 1d6 physical damage.
+          Skeleton: 10 HP, 15 physical defense (Agility/Dodge 5). 5 cold/curse/poison resistance. Attack causes 1d6 physical damage. 10 blunt weapon physical damage reduction.
+          Water Ghost: 15 HP, 15 physical defense (Agility/Dodge 5). 5 cold/curse/poison resistance. Attack causes 1d6 physical damage. Maintains normal underwater mobility.
+      - name: Ritual Mastery
+        description: |
+          You gain access to ritual magic and can invoke divine power.
+          While holding this ability, you gain access to ritual magic regardless of your Occultism skill advancement.
+          Special: Rituals you perform are psychic rituals, spiritual rituals, or summoning rituals; Occultism identification succeeds by default.
+          (This is a potion effect and cannot be recorded or stolen.)

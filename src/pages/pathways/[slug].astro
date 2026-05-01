@@ -75,6 +75,17 @@ const symbolImage = symbolModules[symbolKey]?.default;
             <h2 class="seq-name">{seq.name}</h2>
           </div>
 
+          {seq.sequence_description && (
+            <p class="seq-description">{seq.sequence_description}</p>
+          )}
+
+          {seq.attribute_gains && (
+            <div class="seq-section">
+              <h3 class="section-label">Attribute Gains</h3>
+              <p class="seq-attribute-gains">{seq.attribute_gains}</p>
+            </div>
+          )}
+
           {seq.potion && (
             <div class="seq-section">
               <h3 class="section-label">Potion</h3>
@@ -256,6 +267,24 @@ const symbolImage = symbolModules[symbolKey]?.default;
     text-transform: uppercase;
     color: var(--color-text-muted);
     margin: 0 0 0.6rem;
+  }
+
+  .seq-description {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-material-outline) 50%, transparent);
+  }
+
+  .seq-attribute-gains {
+    font-size: 0.875rem;
+    color: var(--color-primary-light);
+    font-family: var(--font-label);
+    line-height: 1.55;
+    margin: 0;
   }
 
   .seq-potion {
