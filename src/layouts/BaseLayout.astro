@@ -86,4 +86,34 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .nav-links a:hover {
     color: var(--color-primary-light);
   }
+
+  /* ── Mobile nav: two-row layout ── */
+  @media (max-width: 599px) {
+    .site-nav {
+      flex-wrap: wrap;
+      height: auto;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .nav-brand {
+      flex: 1;
+      padding: 0.875rem 0;
+    }
+
+    /* Search button stays in row 1, after brand */
+    :global(.search-trigger) {
+      order: 2;
+    }
+
+    /* Nav links drop to row 2, full width, centred */
+    .nav-links {
+      order: 3;
+      flex-basis: 100%;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 0.5rem 0 0.625rem;
+      border-top: 1px solid var(--color-material-outline);
+    }
+  }
 </style>

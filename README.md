@@ -28,7 +28,7 @@ This project has no affiliation with the *Lord of Mysteries* trademark, its orig
 
 Picture Victorian England: a world of surface prosperity concealing deep inequality. Nobles and the wealthy hold power, while countless poor are quietly crushed beneath society's weight.
 
-In this world, **gods truly exist**. There are seven Righteous Gods — beings capable of maintaining their own sanity, with established churches and believers across nations. Here is the blasphemous truth: gods are promoted step by step through sequence pathways, just like anyone else. A being who reaches Sequence 0 is considered a true god — which means you, too, could one day ascend to that throne.
+In this world, **gods truly exist**. There are seven Righteous Gods — beings capable of maintaining their own sanity, with established churches and believers across nations.
 
 ### The Hidden World
 
