@@ -1,0 +1,91 @@
+basicInformation:
+  name: Aldric Voss
+  age: 32
+  race: Human
+  gender: Male
+  occupation: Private Investigator
+  pathway: Fool
+  sequence: 9
+
+attributes:
+  strength: 38
+  agility: 44
+  willpower: 58
+  physique: 42
+  charisma: 51
+  inspiration: 72
+  luck: 49
+  education: 68
+
+stats:
+  life: 9
+  spirituality: 14
+  rationality: 12
+  luck: 6
+
+skillsAttributes:
+  strengthBased:
+    climbing: 18
+    throwing: 12
+    fighting: 25
+    intimidation: 20
+    jumping: 15
+    animalTaming: 8
+  agilityBased:
+    stealth: 30
+    sleightOfHand: 22
+    swimming: 18
+    shooting: 28
+    camouflage: 15
+    lockpicking: 35
+    pilot: 10
+    heavyMachinery: 5
+    dodge: 28
+    extraEvasion: 12
+  charismaBased:
+    pleasing: 42
+    deception: 55
+    speech: 48
+    persuasion: 60
+    psychoanalysis: 52
+    performance: 38
+    disguise: 45
+    credibility: 50
+  inspirationBased:
+    listen: 65
+    investigate: 78
+    reparing: 20
+    mysticism: 70
+    psychology: 68
+    cooking: 22
+    arts: 30
+    pursue: 55
+    readLips: 40
+  education:
+    navigate: 25
+    trading: 30
+    medicine: 22
+    libraryUsage: 72
+    writing: 65
+    demolition: 5
+    survival: 20
+    naturalScience: 38
+    laws: 45
+    archeology: 35
+    religion: 62
+    astronomy: 58
+
+abilities:
+  - name: Occult Mastery
+    description: "Every time you receive effective, authentic, non-repetitive occult guidance lasting at least 2 hours, your Occult skill increases by 1 level. You need 2, 3, and 4 learning sessions to reach Proficiency, Advanced, and Master levels respectively. Learning is limited to 1 session per day for knowledge digestion."
+  - name: Divination
+    cost: "1 Action, 2 Spirituality"
+    description: "You master astrology, card divination, pendulums, spiritual vision, numerology, palmistry, and other divination methods. Perform 1 Occult check — Difficulty 15 gives vague results, Difficulty 20 gives a general direction, Difficulty 25 gives specific results."
+
+items:
+  - name: Tarot Deck
+    description: "A worn deck of 22 major arcana cards. Used as a focus for divination rituals."
+  - name: Investigator's Notebook
+    description: "A leather-bound journal filled with case notes, occult observations, and ciphered personal entries."
+  - name: Revolver (.38)
+    description: "A compact six-shooter carried in a shoulder holster beneath his coat."

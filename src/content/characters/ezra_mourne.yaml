@@ -1,0 +1,90 @@
+basicInformation:
+  name: Ezra Mourne
+  age: 45
+  race: Human
+  gender: Male
+  occupation: Mortician & Physician
+  pathway: Death
+  sequence: 9
+
+attributes:
+  strength: 42
+  agility: 35
+  willpower: 65
+  physique: 48
+  charisma: 38
+  inspiration: 60
+  luck: 30
+  education: 74
+
+stats:
+  life: 10
+  spirituality: 11
+  rationality: 13
+  luck: 4
+
+skillsAttributes:
+  strengthBased:
+    climbing: 15
+    throwing: 18
+    fighting: 28
+    intimidation: 30
+    jumping: 12
+    animalTaming: 10
+  agilityBased:
+    stealth: 25
+    sleightOfHand: 48
+    swimming: 20
+    shooting: 22
+    camouflage: 18
+    lockpicking: 15
+    pilot: 8
+    heavyMachinery: 5
+    dodge: 22
+    extraEvasion: 10
+  charismaBased:
+    pleasing: 28
+    deception: 35
+    speech: 40
+    persuasion: 42
+    psychoanalysis: 55
+    performance: 20
+    disguise: 30
+    credibility: 48
+  inspirationBased:
+    listen: 58
+    investigate: 70
+    reparing: 32
+    mysticism: 45
+    psychology: 60
+    cooking: 15
+    arts: 18
+    pursue: 35
+    readLips: 28
+  education:
+    navigate: 20
+    trading: 25
+    medicine: 82
+    libraryUsage: 68
+    writing: 55
+    demolition: 8
+    survival: 30
+    naturalScience: 72
+    laws: 40
+    archeology: 35
+    religion: 48
+    astronomy: 30
+
+abilities:
+  - name: Corpse Characteristics
+    description: "You gain corpse-like traits that grant 5 resistance to cold, poison, and curse. Ordinary undead (ghosts, zombies) mistake you for one of their own — does not include undead with outstanding intelligence or those transformed by Beyonders. Appearance changes: quite gloomy with lower body temperature, whiter skin. Every 2-hour autopsy of a unique undead type increases Knowledge of the Dead by 1 level."
+  - name: Knowledge of the Dead
+    description: "You know the traits and weaknesses of many undead creatures. This skill replaces Biology for corpse identification. Using it on a corpse reveals: Difficulty 15 — general cause and time of death. Difficulty 20 — exact cause, specific weapon, extraordinary power type. Difficulty 25 — pre-death treatment, disguised suicides, post-death fighting. Difficulty 30 — living conditions, drug use, Beyonder training."
+
+items:
+  - name: Physician's Bag
+    description: "A well-worn leather bag containing surgical instruments, bandages, antiseptic tinctures, and sedatives. Ezra never leaves home without it."
+  - name: Autopsy Journal
+    description: "Thick ledger documenting every corpse examined — cause of death, extraordinary factors noted, and personal observations in a cramped clinical hand."
+  - name: Spirit Sight Monocle
+    description: "A brass monocle fitted with a faintly smoky lens. When worn, enables passive spirit vision, revealing nearby evil spirits as dim silhouettes."

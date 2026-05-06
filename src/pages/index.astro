@@ -32,7 +32,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <h2>Characters</h2>
         <p>Player character statblocks, HP &amp; Sanity trackers, inventory.</p>
         {characters.length === 0 && <ComingSoon label="No characters yet" />}
-        <ComingSoon />
       </a>
       <a href={`${base}/rules`} class="nav-card">
         <div class="nav-card__icon">✦</div>

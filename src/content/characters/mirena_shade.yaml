@@ -1,0 +1,92 @@
+basicInformation:
+  name: Mirena Shade
+  age: 26
+  race: Human
+  gender: Female
+  occupation: Thief
+  pathway: Darkness
+  sequence: 9
+
+attributes:
+  strength: 55
+  agility: 78
+  willpower: 46
+  physique: 52
+  charisma: 60
+  inspiration: 48
+  luck: 55
+  education: 32
+
+stats:
+  life: 11
+  spirituality: 10
+  rationality: 8
+  luck: 9
+
+skillsAttributes:
+  strengthBased:
+    climbing: 72
+    throwing: 45
+    fighting: 68
+    intimidation: 38
+    jumping: 65
+    animalTaming: 12
+  agilityBased:
+    stealth: 85
+    sleightOfHand: 78
+    swimming: 50
+    shooting: 55
+    camouflage: 62
+    lockpicking: 80
+    pilot: 20
+    heavyMachinery: 8
+    dodge: 75
+    extraEvasion: 68
+  charismaBased:
+    pleasing: 55
+    deception: 70
+    speech: 42
+    persuasion: 48
+    psychoanalysis: 30
+    performance: 52
+    disguise: 72
+    credibility: 35
+  inspirationBased:
+    listen: 65
+    investigate: 45
+    reparing: 28
+    mysticism: 18
+    psychology: 32
+    cooking: 40
+    arts: 22
+    pursue: 58
+    readLips: 48
+  education:
+    navigate: 38
+    trading: 42
+    medicine: 20
+    libraryUsage: 18
+    writing: 22
+    demolition: 35
+    survival: 48
+    naturalScience: 15
+    laws: 28
+    archeology: 10
+    religion: 12
+    astronomy: 20
+
+abilities:
+  - name: Enhanced Skill Mastery
+    description: "You excel at fighting, shooting, and climbing, gaining mastery over their subdivision skills. You can learn these skills through effective training of at least 2 hours per session, increasing the corresponding skill by 1 level. From trainee to proficient: 2 sessions. To advanced: 3 sessions. To master: 4 sessions. You can learn once per day."
+  - name: Blessed of the Night
+    description: "The deeper the night, the more energetic you become. At Dusk: Attribute and skill identification +1 (favorable). At Night: All attributes +1, identification +2 (favorable). At Late Night (11 PM–3 AM): All attributes +2, identification +2 (favorable). Fast Dodge: During night/late night, gain complete physical defense against firearms (excluding light and lightning). Gain 1 extra level of dodge."
+
+items:
+  - name: Lockpick Set
+    description: "A professional set of tension wrenches and picks concealed in a slim leather wallet."
+  - name: Black Silk Bodysuit
+    description: "Tight-fitting night-work attire treated with a muffling compound to suppress noise during movement."
+  - name: Throwing Knives (×4)
+    description: "Four balanced steel throwing knives worn in a concealed forearm sheath."
+  - name: Dark Lantern
+    description: "A bull's-eye lantern with a sliding shutter. Provides directional light that can be fully blocked."

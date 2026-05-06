@@ -1,56 +1,82 @@
-name: Character Name
-pathway: Fool
-sequence: 9
-sequenceName: Seer
-background: "Brief background description."
-
-hp:
-  max: 40
-
-sanity:
-  max: 60
-
-digestion:
-  total: 3      # Total potion slots available at this sequence
-  digested: 0   # Slots already digested
+basicInformation:
+  name: Character Name
+  age: 30
+  race: Human
+  gender: Male
+  occupation: Occupation
+  pathway: Fool
+  sequence: 9
 
 attributes:
-  strength: 10
-  dexterity: 10
-  constitution: 10
-  intelligence: 10
-  wisdom: 10
-  charisma: 10
+  strength: 50
+  agility: 50
+  willpower: 50
+  physique: 50
+  charisma: 50
+  inspiration: 50
+  luck: 50
+  education: 50
 
-# attribute: which stat the skill uses | proficient: adds proficiency bonus to rolls
-skills:
-  # Strength
-  athletics:        { attribute: strength,      proficient: false }
-  # Dexterity
-  acrobatics:       { attribute: dexterity,     proficient: false }
-  sleight_of_hand:  { attribute: dexterity,     proficient: false }
-  stealth:          { attribute: dexterity,     proficient: false }
-  # Intelligence
-  arcana:           { attribute: intelligence,  proficient: false }
-  history:          { attribute: intelligence,  proficient: false }
-  investigation:    { attribute: intelligence,  proficient: false }
-  occult:           { attribute: intelligence,  proficient: false }
-  religion:         { attribute: intelligence,  proficient: false }
-  # Wisdom
-  animal_handling:  { attribute: wisdom,        proficient: false }
-  insight:          { attribute: wisdom,        proficient: false }
-  medicine:         { attribute: wisdom,        proficient: false }
-  perception:       { attribute: wisdom,        proficient: false }
-  survival:         { attribute: wisdom,        proficient: false }
-  # Charisma
-  deception:        { attribute: charisma,      proficient: false }
-  intimidation:     { attribute: charisma,      proficient: false }
-  performance:      { attribute: charisma,      proficient: false }
-  persuasion:       { attribute: charisma,      proficient: false }
+stats:
+  life: 10
+  spirituality: 10
+  rationality: 10
+  luck: 10
+
+skillsAttributes:
+  strengthBased:
+    climbing: 0
+    throwing: 0
+    fighting: 0
+    intimidation: 0
+    jumping: 0
+    animalTaming: 0
+  agilityBased:
+    stealth: 0
+    sleightOfHand: 0
+    swimming: 0
+    shooting: 0
+    camouflage: 0
+    lockpicking: 0
+    pilot: 0
+    heavyMachinery: 0
+    dodge: 0
+    extraEvasion: 0
+  charismaBased:
+    pleasing: 0
+    deception: 0
+    speech: 0
+    persuasion: 0
+    psychoanalysis: 0
+    performance: 0
+    disguise: 0
+    credibility: 0
+  inspirationBased:
+    listen: 0
+    investigate: 0
+    reparing: 0
+    mysticism: 0
+    psychology: 0
+    cooking: 0
+    arts: 0
+    pursue: 0
+    readLips: 0
+  education:
+    navigate: 0
+    trading: 0
+    medicine: 0
+    libraryUsage: 0
+    writing: 0
+    demolition: 0
+    survival: 0
+    naturalScience: 0
+    laws: 0
+    archeology: 0
+    religion: 0
+    astronomy: 0
 
 abilities:
   - name: Ability Name
-    source: "Sequence Name (Sequence N)"
     cost: "1 Action"           # optional — omit if passive
     description: "Ability description."
 

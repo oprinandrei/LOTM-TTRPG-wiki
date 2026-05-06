@@ -1,0 +1,743 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Badge from '../../components/ui/Badge.astro';
+import type { ImageMetadata } from 'astro';
+
+export async function getStaticPaths() {
+  const characters = await getCollection('characters');
+  return characters
+    .filter(c => c.id !== '_template')
+    .map((character) => ({
+      params: { slug: character.id },
+      props: { character },
+    }));
+}
+
+const { character } = Astro.props;
+const { basicInformation, attributes, stats, skillsAttributes, abilities, items } = character.data;
+
+const symbolModules = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/images/symbol_*.webp',
+  { eager: true }
+);
+
+function getSymbolImage(pathway: string): ImageMetadata | undefined {
+  const slug = pathway.toLowerCase().replace(/\s+/g, '_');
+  const key = slug === 'twilight_giant'
+    ? `/src/assets/images/symbol_twilght_giant.webp`
+    : `/src/assets/images/symbol_${slug}.webp`;
+  return symbolModules[key]?.default;
+}
+
+const symbolImage = getSymbolImage(basicInformation.pathway);
+
+function label(key: string): string {
+  return key
+    .replace(/([A-Z])/g, ' $1')
+    .replace(/_/g, ' ')
+    .replace(/\b\w/g, c => c.toUpperCase())
+    .trim();
+}
+
+const skillGroups: { title: string; attribute: string; skills: Record<string, number> }[] = [
+  { title: 'Strength Based', attribute: 'STR', skills: skillsAttributes.strengthBased },
+  { title: 'Agility Based',  attribute: 'AGI', skills: skillsAttributes.agilityBased },
+  { title: 'Charisma Based', attribute: 'CHA', skills: skillsAttributes.charismaBased },
+  { title: 'Inspiration Based', attribute: 'INS', skills: skillsAttributes.inspirationBased },
+  { title: 'Education',      attribute: 'EDU', skills: skillsAttributes.education },
+];
+---
+
+<BaseLayout
+  title={`${basicInformation.name} — Lord of Mysteries TTRPG`}
+>
+  <!-- Hero -->
+  <div class="character-hero">
+    <div class="hero-overlay" />
+    <div class="hero-content">
+      {symbolImage && (
+        <div class="symbol-frame">
+          <Image src={symbolImage} alt={`${basicInformation.pathway} symbol`} width={64} height={64} />
+        </div>
+      )}
+      <div class="hero-text">
+        <div class="hero-badges">
+          <Badge label={basicInformation.pathway} variant="pathway" />
+          <Badge label={`Sequence ${basicInformation.sequence}`} variant="sequence" />
+        </div>
+        <h1>{basicInformation.name}</h1>
+        {(basicInformation.race || basicInformation.occupation) && (
+          <p class="hero-sub">
+            {[basicInformation.race, basicInformation.occupation].filter(Boolean).join(' · ')}
+          </p>
+        )}
+      </div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <main class="container" data-pagefind-body data-pagefind-meta="type:Character">
+    <div class="cards">
+
+      <!-- Row 1: Basic Info + Stats -->
+      <div class="row-two">
+
+        <!-- Basic Information -->
+        <div class="card">
+          <div class="card-header">
+            <h2>Basic Information</h2>
+          </div>
+          <div class="card-body">
+            <dl class="info-list">
+              <div class="info-row"><dt>Name</dt><dd>{basicInformation.name}</dd></div>
+              {basicInformation.age    && <div class="info-row"><dt>Age</dt><dd>{basicInformation.age}</dd></div>}
+              {basicInformation.race   && <div class="info-row"><dt>Race</dt><dd>{basicInformation.race}</dd></div>}
+              {basicInformation.gender && <div class="info-row"><dt>Gender</dt><dd>{basicInformation.gender}</dd></div>}
+              {basicInformation.occupation && <div class="info-row"><dt>Occupation</dt><dd>{basicInformation.occupation}</dd></div>}
+              <div class="info-row"><dt>Pathway</dt><dd>{basicInformation.pathway}</dd></div>
+              <div class="info-row"><dt>Sequence</dt><dd>{basicInformation.sequence}</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="card">
+          <div class="card-header">
+            <h2>Stats</h2>
+          </div>
+          <div class="card-body stats-body">
+            <div class="stat-box life" data-stat={`lom_${character.id}_life`} data-default={stats.life}>
+              <span class="stat-label">Life</span>
+              <div class="stat-controls">
+                <button class="stat-btn stat-minus" aria-label="Decrease Life">−</button>
+                <span class="stat-display">{stats.life}</span>
+                <button class="stat-btn stat-plus" aria-label="Increase Life">+</button>
+              </div>
+            </div>
+            <div class="stat-box spirit" data-stat={`lom_${character.id}_spirituality`} data-default={stats.spirituality}>
+              <span class="stat-label">Spirituality</span>
+              <div class="stat-controls">
+                <button class="stat-btn stat-minus" aria-label="Decrease Spirituality">−</button>
+                <span class="stat-display">{stats.spirituality}</span>
+                <button class="stat-btn stat-plus" aria-label="Increase Spirituality">+</button>
+              </div>
+            </div>
+            <div class="stat-box rational" data-stat={`lom_${character.id}_rationality`} data-default={stats.rationality}>
+              <span class="stat-label">Rationality</span>
+              <div class="stat-controls">
+                <button class="stat-btn stat-minus" aria-label="Decrease Rationality">−</button>
+                <span class="stat-display">{stats.rationality}</span>
+                <button class="stat-btn stat-plus" aria-label="Increase Rationality">+</button>
+              </div>
+            </div>
+            <div class="stat-box luck" data-stat={`lom_${character.id}_luck`} data-default={stats.luck}>
+              <span class="stat-label">Luck</span>
+              <div class="stat-controls">
+                <button class="stat-btn stat-minus" aria-label="Decrease Luck">−</button>
+                <span class="stat-display">{stats.luck}</span>
+                <button class="stat-btn stat-plus" aria-label="Increase Luck">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Attributes -->
+      <div class="card">
+        <div class="card-header">
+          <h2>Attributes</h2>
+        </div>
+        <div class="card-body attr-body">
+          {Object.entries(attributes).map(([key, value]) => (
+            <div class="attr-row">
+              <span class="attr-label">{label(key)}</span>
+              <div class="bar-track">
+                <div class="bar-fill" style={`width: ${Math.min(value as number, 100)}%`} />
+              </div>
+              <span class="attr-value">{value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="card">
+        <div class="card-header">
+          <h2>Skills</h2>
+        </div>
+        <div class="card-body skills-body">
+          {skillGroups.map(({ title, attribute, skills }) => (
+            <div class="skill-group">
+              <div class="skill-group-header">
+                <span class="skill-group-title">{title}</span>
+                <span class="skill-group-attr">{attribute}</span>
+              </div>
+              <div class="skill-rows">
+                {Object.entries(skills).map(([key, value]) => (
+                  <div class="skill-row">
+                    <span class="skill-name">{label(key)}</span>
+                    <div class="bar-track">
+                      <div class="bar-fill skill-bar-fill" style={`width: ${Math.min(value as number, 100)}%`} />
+                    </div>
+                    <span class="skill-value">{value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Abilities -->
+      {abilities && abilities.length > 0 && (
+        <div class="card">
+          <div class="card-header">
+            <h2>Abilities</h2>
+          </div>
+          <div class="card-body">
+            <div class="ability-list">
+              {abilities.map((ability) => (
+                <div class="ability">
+                  <div class="ability-header">
+                    <span class="ability-name">{ability.name}</span>
+                    {ability.cost && <span class="ability-cost">{ability.cost}</span>}
+                  </div>
+                  <p class="ability-desc">{ability.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      <!-- Items -->
+      {items && items.length > 0 && (
+        <div class="card">
+          <div class="card-header">
+            <h2>Items</h2>
+          </div>
+          <div class="card-body">
+            <div class="item-list">
+              {items.map((item) => (
+                <div class="item">
+                  <span class="item-name">{item.name}</span>
+                  {item.description && <p class="item-desc">{item.description}</p>}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  /* ── Hero ── */
+  .character-hero {
+    position: relative;
+    min-height: 220px;
+    display: flex;
+    align-items: flex-end;
+    background-color: var(--color-background-surface);
+    border-bottom: 1px solid var(--color-material-outline);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-secondary) 8%, transparent) 0%,
+      transparent 60%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    padding: 2rem var(--spacing-gutter);
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .symbol-frame {
+    flex-shrink: 0;
+    width: 72px;
+    height: 72px;
+    border: 1px solid var(--color-material-outline);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-background-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 0 16px color-mix(in srgb, var(--color-secondary) 30%, transparent);
+  }
+
+  .symbol-frame img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+  }
+
+  .hero-badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-text h1 {
+    font-family: var(--font-headline);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-text-heading);
+    margin: 0 0 0.4rem;
+  }
+
+  .hero-sub {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    font-style: italic;
+  }
+
+  /* ── Layout ── */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem var(--spacing-gutter);
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .row-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .row-two {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ── Card shell ── */
+  .card {
+    background-color: var(--color-background-card);
+    border: 1px solid var(--color-material-outline);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--color-background-surface);
+    border-bottom: 1px solid var(--color-material-outline);
+  }
+
+  .card-header h2 {
+    font-family: var(--font-label);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .card-body {
+    padding: 1.25rem;
+  }
+
+  /* ── Basic Info ── */
+  .info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+  }
+
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-material-outline) 50%, transparent);
+  }
+
+  .info-row:last-child {
+    border-bottom: none;
+  }
+
+  .info-row dt {
+    font-family: var(--font-label);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+  }
+
+  .info-row dd {
+    font-size: 0.875rem;
+    color: var(--color-text-default);
+    margin: 0;
+    text-align: right;
+  }
+
+  /* ── Stats ── */
+  .stats-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 1rem 0.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-material-outline);
+    background-color: var(--color-background-surface);
+  }
+
+  .stat-label {
+    font-family: var(--font-label);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  .stat-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .stat-display {
+    font-family: var(--font-headline);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+    min-width: 2ch;
+    text-align: center;
+  }
+
+  .stat-display :global(.stat-ref) {
+    font-family: var(--font-label);
+    font-size: 0.55em;
+    font-weight: 400;
+    color: var(--color-text-muted);
+  }
+
+  .stat-btn {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-material-outline);
+    border-radius: var(--radius-sm);
+    background: var(--color-background-card);
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+    user-select: none;
+  }
+
+  .stat-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary-light);
+    background-color: var(--color-primary-container);
+  }
+
+  .stat-btn:active {
+    transform: scale(0.9);
+  }
+
+  .stat-box.life     { border-color: color-mix(in srgb, var(--color-error) 40%, var(--color-material-outline)); }
+  .stat-box.life .stat-display { color: var(--color-error); }
+
+  .stat-box.spirit   { border-color: color-mix(in srgb, var(--color-secondary) 40%, var(--color-material-outline)); }
+  .stat-box.spirit .stat-display { color: var(--color-secondary-light); }
+
+  .stat-box.rational { border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-material-outline)); }
+  .stat-box.rational .stat-display { color: var(--color-primary-light); }
+
+  .stat-box.luck     { border-color: color-mix(in srgb, var(--color-tertiary) 40%, var(--color-material-outline)); }
+  .stat-box.luck .stat-display { color: var(--color-tertiary); }
+
+  /* ── Shared bar ── */
+  .bar-track {
+    flex: 1;
+    height: 4px;
+    background-color: var(--color-background-surface);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    border: 1px solid var(--color-material-outline);
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+    border-radius: var(--radius-full);
+    transition: width 0.3s ease;
+  }
+
+  /* ── Attributes ── */
+  .attr-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .attr-row {
+    display: grid;
+    grid-template-columns: 120px 1fr 40px;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .attr-label {
+    font-family: var(--font-label);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  .attr-value {
+    font-family: var(--font-label);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-primary-light);
+    text-align: right;
+  }
+
+  /* ── Skills ── */
+  .skills-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .skill-group-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--color-material-outline);
+    margin-bottom: 0.25rem;
+  }
+
+  .skill-group-title {
+    font-family: var(--font-label);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  .skill-group-attr {
+    font-family: var(--font-label);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-primary-light);
+    background-color: var(--color-primary-container);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-full);
+    padding: 1px 7px;
+  }
+
+  .skill-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .skill-row {
+    display: grid;
+    grid-template-columns: 1fr 80px 32px;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .skill-name {
+    font-size: 0.78rem;
+    color: var(--color-text-default);
+  }
+
+  .skill-value {
+    font-family: var(--font-label);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-align: right;
+  }
+
+  .skill-bar-fill {
+    background: linear-gradient(90deg, var(--color-secondary-dark), var(--color-secondary-light));
+  }
+
+  /* ── Abilities ── */
+  .ability-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .ability {
+    background-color: var(--color-background-surface);
+    border-left: 2px solid var(--color-secondary);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: 0.6rem 0.875rem;
+  }
+
+  .ability-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .ability-name {
+    font-family: var(--font-label);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-secondary-light);
+  }
+
+  .ability-cost {
+    font-family: var(--font-label);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    background-color: var(--color-background-card);
+    border: 1px solid var(--color-material-outline);
+    border-radius: var(--radius-full);
+    padding: 1px 8px;
+  }
+
+  .ability-desc {
+    font-size: 0.875rem;
+    color: var(--color-text-default);
+    line-height: 1.55;
+    margin: 0;
+    white-space: pre-line;
+  }
+
+  /* ── Items ── */
+  .item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.6rem 0.875rem;
+    background-color: var(--color-background-surface);
+    border-left: 2px solid var(--color-tertiary);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+
+  .item-name {
+    font-family: var(--font-label);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-tertiary);
+  }
+
+  .item-desc {
+    font-size: 0.875rem;
+    color: var(--color-text-default);
+    line-height: 1.55;
+    margin: 0;
+  }
+</style>
+
+<script is:inline define:vars={{ charId: character.id, defaultStats: { life: stats.life, spirituality: stats.spirituality, rationality: stats.rationality, luck: stats.luck } }}>
+  const PREFIX = 'lom_' + charId + '_';
+
+  function storageKey(stat) {
+    return PREFIX + stat;
+  }
+
+  function readStat(stat, defaultVal) {
+    const stored = localStorage.getItem(storageKey(stat));
+    return stored !== null ? parseInt(stored, 10) : defaultVal;
+  }
+
+  function renderDisplay(box, current, ref) {
+    const display = box.querySelector('.stat-display');
+    if (current === ref) {
+      display.innerHTML = `<span class="stat-cur">${current}</span>`;
+    } else {
+      display.innerHTML = `<span class="stat-cur">${current}</span><span class="stat-ref">/${ref}</span>`;
+    }
+  }
+
+  for (const [stat, defaultVal] of Object.entries(defaultStats)) {
+    const key = storageKey(stat);
+    const box = document.querySelector(`[data-stat="${key}"]`);
+    if (!box) continue;
+
+    renderDisplay(box, readStat(stat, defaultVal), defaultVal);
+
+    box.querySelector('.stat-minus').addEventListener('click', () => {
+      const next = Math.max(0, readStat(stat, defaultVal) - 1);
+      localStorage.setItem(key, String(next));
+      renderDisplay(box, next, defaultVal);
+    });
+
+    box.querySelector('.stat-plus').addEventListener('click', () => {
+      const next = readStat(stat, defaultVal) + 1;
+      localStorage.setItem(key, String(next));
+      renderDisplay(box, next, defaultVal);
+    });
+  }
+</script>
