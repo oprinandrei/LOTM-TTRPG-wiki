@@ -13,12 +13,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <section class="hero">
       <h1>The Beyond Awaits</h1>
       <p class="hero-sub">A TTRPG reference for the Lord of Mysteries system. Fast lookup for pathways, characters, and rules — built for the table.</p>
-      <div class="hero-actions">
-        <a href={`${base}/pathways`} class="btn btn--primary">Browse Pathways</a>
-        {characters.length > 0 && (
-          <a href={`${base}/characters`} class="btn btn--secondary">Characters</a>
-        )}
-      </div>
     </section>
 
     <section class="nav-cards">
@@ -107,7 +101,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   /* ── Hero ── */
   .hero {
     text-align: center;
-    padding: 4rem 0 3rem;
     border-bottom: 1px solid var(--color-material-outline);
     margin-bottom: 3rem;
   }
@@ -217,9 +210,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
   /* ── About section ── */
   .about {
-    margin-top: 4rem;
     padding-top: 3rem;
-    border-top: 1px solid var(--color-material-outline);
   }
 
   .about__header {
